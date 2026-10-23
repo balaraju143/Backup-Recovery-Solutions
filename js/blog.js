@@ -317,150 +317,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
-document.addEventListener("DOMContentLoaded", () => {
-    const section = document.querySelector(".stackly-insight-section");
-    if (!section) return;
-
-    const heading = section.querySelector(".stackly-insight-heading");
-    const cards = Array.from(
-        section.querySelectorAll(".stackly-flip-card")
-    );
-    const footer = section.querySelector(".stackly-insight-footer");
-
-    /* =====================================
-       FLIP CARDS + EXPLORE LINKS
-    ===================================== */
-
-    cards.forEach(card => {
-        const inner = card.querySelector(".stackly-flip-inner");
-        const exploreLink = card.querySelector(".stackly-insight-link");
-
-        // Clicking Explore More navigates to 404.html.
-        if (exploreLink) {
-            exploreLink.setAttribute("href", "./404.html");
-
-            exploreLink.addEventListener("click", event => {
-                event.stopPropagation();
-
-                // Allow normal browser navigation.
-                window.location.assign("./404.html");
-            });
-        }
-
-        // Flip the card when clicking elsewhere on it.
-        if (inner) {
-            inner.addEventListener("click", event => {
-                // Do not flip the card when clicking the article link.
-                if (event.target.closest(".stackly-insight-link")) {
-                    return;
-                }
-
-                const shouldFlip = !card.classList.contains("is-flipped");
-
-                cards.forEach(otherCard => {
-                    otherCard.classList.remove("is-flipped");
-
-                    const otherInner = otherCard.querySelector(
-                        ".stackly-flip-inner"
-                    );
-
-                    if (otherInner) {
-                        otherInner.setAttribute("aria-pressed", "false");
-                    }
-                });
-
-                if (shouldFlip) {
-                    card.classList.add("is-flipped");
-                    inner.setAttribute("aria-pressed", "true");
-                }
-            });
-        }
-    });
-
-
-    /* =====================================
-       GSAP ENTRANCE ANIMATIONS
-    ===================================== */
-
-    if (typeof gsap === "undefined") {
-        if (heading) heading.style.opacity = "1";
-        if (footer) footer.style.opacity = "1";
-
-        cards.forEach(card => {
-            card.style.opacity = "1";
-            card.style.transform = "none";
-        });
-
-        return;
-    }
-
-    const mobile = window.matchMedia("(max-width: 600px)").matches;
-
-    if (heading) {
-        gsap.set(heading, {
-            opacity: 0,
-            y: 32
-        });
-    }
-
-    gsap.set(cards, {
-        opacity: 0,
-        x: index => mobile ? 0 : (index % 2 === 0 ? -65 : 65),
-        y: mobile ? 30 : 12
-    });
-
-    if (footer) {
-        gsap.set(footer, {
-            opacity: 0,
-            y: 20
-        });
-    }
-
-    const observer = new IntersectionObserver(entries => {
-        if (!entries[0].isIntersecting) return;
-
-        observer.disconnect();
-
-        const timeline = gsap.timeline({
-            defaults: {
-                ease: "power3.out"
-            }
-        });
-
-        if (heading) {
-            timeline.to(heading, {
-                opacity: 1,
-                y: 0,
-                duration: 0.8
-            });
-        }
-
-        timeline.to(cards, {
-            opacity: 1,
-            x: 0,
-            y: 0,
-            duration: 0.85,
-            stagger: 0.16
-        }, "-=0.25");
-
-        if (footer) {
-            timeline.to(footer, {
-                opacity: 1,
-                y: 0,
-                duration: 0.65
-            }, "-=0.2");
-        }
-
-    }, {
-        threshold: 0.12
-    });
-
-    observer.observe(section);
-});
-
-
-
 /* =====================================
    BLOG TIMELINE GSAP REVEAL
 ===================================== */
@@ -815,3 +671,112 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(cta);
 
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const section = document.querySelector(".stackly-insight-section");
+    if (!section) return;
+
+    const heading = section.querySelector(".stackly-insight-heading");
+    const cards = gsap.utils.toArray(
+        section.querySelectorAll(".stackly-flip-card")
+    );
+    const footer = section.querySelector(".stackly-insight-footer");
+
+    // Handle Explore More links separately.
+    section.querySelectorAll(".stackly-insight-link").forEach(link => {
+        link.addEventListener("click", event => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            window.location.href = link.getAttribute("href") || "404.html";
+        });
+    });
+
+    // Accessible tap-to-flip behaviour.
+    cards.forEach(card => {
+        const button = card.querySelector(".stackly-flip-inner");
+        if (!button) return;
+
+        button.addEventListener("click", event => {
+            // Do not flip the card when clicking Explore More.
+            if (event.target.closest(".stackly-insight-link")) return;
+
+            const shouldFlip = !card.classList.contains("is-flipped");
+
+            cards.forEach(otherCard => {
+                otherCard.classList.remove("is-flipped");
+
+                const otherButton =
+                    otherCard.querySelector(".stackly-flip-inner");
+
+                if (otherButton) {
+                    otherButton.setAttribute("aria-pressed", "false");
+                }
+            });
+
+            if (shouldFlip) {
+                card.classList.add("is-flipped");
+                button.setAttribute("aria-pressed", "true");
+            }
+        });
+    });
+
+    // Stop here if GSAP is not loaded.
+    if (typeof gsap === "undefined") return;
+
+    const mobile = window.matchMedia("(max-width: 600px)").matches;
+
+    gsap.set(heading, {
+        opacity: 0,
+        y: 32
+    });
+
+    gsap.set(cards, {
+        opacity: 0,
+        x: index => mobile ? 0 : (index % 2 === 0 ? -65 : 65),
+        y: mobile ? 30 : 12
+    });
+
+    gsap.set(footer, {
+        opacity: 0,
+        y: 20
+    });
+
+    const observer = new IntersectionObserver(entries => {
+        if (!entries[0].isIntersecting) return;
+
+        observer.disconnect();
+
+        const timeline = gsap.timeline({
+            defaults: { ease: "power3.out" }
+        });
+
+        timeline.to(heading, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8
+        });
+
+        timeline.to(cards, {
+            opacity: 1,
+            x: 0,
+            y: 0,
+            duration: 0.85,
+            stagger: 0.16
+        }, "-=0.25");
+
+        timeline.to(footer, {
+            opacity: 1,
+            y: 0,
+            duration: 0.65
+        }, "-=0.2");
+
+    }, {
+        threshold: 0.12
+    });
+
+    observer.observe(section);
+});
+
+
