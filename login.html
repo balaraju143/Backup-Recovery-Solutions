@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly | Backup & Recovery Solutions</title>
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0"
+>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <!-- ================================
+         HEADER / NAVBAR
+    ================================= -->
+
+    <header class="main-header">
+
+        <nav class="navbar">
+
+            <!-- LOGO -->
+            <div class="navbar-logo">
+                <a href="index.html">
+                    <img
+                        src="assets/red-logo.webp"
+                        alt="Stackly"
+                        class="stackly-logo"
+                    >
+                </a>
+            </div>
+
+
+            <!-- DESKTOP NAVIGATION -->
+            <div class="desktop-navigation">
+
+                <ul class="nav-menu">
+
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">
+                            About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">
+                            Services
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">
+                            Blog
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- RIGHT SIDE ACTIONS -->
+            <div class="navbar-actions">
+
+                <a href="login.html" class="login-link">
+                    Login
+                </a>
+
+                <a href="contact.html" class="header-cta">
+                    Get Started
+                </a>
+
+            </div>
+
+
+            <!-- MOBILE MENU BUTTON -->
+            <button
+                class="mobile-menu-toggle"
+                id="mobileMenuToggle"
+                type="button"
+                aria-label="Open Menu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </nav>
+
+
+        <!-- =================================
+             MOBILE FULL SCREEN NAVIGATION
+        ================================== -->
+
+        <div
+            class="mobile-navigation"
+            id="mobileNavigation"
+        >
+
+            <div class="mobile-menu-content">
+
+                <ul class="mobile-nav-menu">
+
+                    <li>
+                        <a
+                            href="index.html"
+                            class="mobile-nav-link"
+                        >
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="about.html"
+                            class="mobile-nav-link"
+                        >
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="services.html"
+                            class="mobile-nav-link"
+                        >
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="blog.html"
+                            class="mobile-nav-link"
+                        >
+                            Blog
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="contact.html"
+                            class="mobile-nav-link"
+                        >
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <!-- MOBILE ACTION BUTTONS -->
+
+                <div class="mobile-menu-actions">
+
+                    <a
+                        href="login.html"
+                        class="mobile-login"
+                    >
+                        Login
+                    </a>
+
+                    <a
+                        href="contact.html"
+                        class="mobile-cta"
+                    >
+                        Get Started
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+<!-- STACKLY BACKUP & RECOVERY LOGIN CARD -->
+<section class="sr-login-section">
+    <div class="sr-login-card">
+
+        <!-- LEFT VISUAL PANEL -->
+        <div class="sr-login-visual">
+            <div class="sr-login-visual-content">
+                <span class="sr-login-eyebrow">STACKLY SECURE PORTAL</span>
+
+                <h1>Protect Your Data. Restore Your Confidence.</h1>
+
+                <p>
+                    Access your backup activity, monitor recovery operations,
+                    manage protected systems, and keep your business prepared
+                    for unexpected disruption.
+                </p>
+
+                <div class="sr-login-stats">
+                    <div class="sr-stat">
+                        <strong>24/7</strong>
+                        <span>Data Protection</span>
+                    </div>
+                    <div class="sr-stat">
+                        <strong>99.9%</strong>
+                        <span>Target Availability</span>
+                    </div>
+                    <div class="sr-stat">
+                        <strong>Secure</strong>
+                        <span>Recovery Planning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT LOGIN PANEL -->
+        <div class="sr-login-panel">
+            <div class="sr-login-form-wrap">
+
+                <div class="sr-login-heading">
+                    <span class="sr-form-eyebrow">WELCOME BACK</span>
+                    <h2>Sign In</h2>
+                    <p>Enter your details to access your secure workspace.</p>
+                </div>
+
+                <form id="srLoginForm" novalidate>
+
+                    <!-- ACCOUNT ROLE -->
+                    <fieldset class="sr-role-field">
+                        <legend>Choose Account Role</legend>
+
+                        <div class="sr-role-options">
+                            <button
+                                type="button"
+                                class="sr-role-btn is-selected"
+                                data-role="client"
+                                aria-pressed="true"
+                            >
+                                <span class="material-symbols-outlined">person</span>
+                                Client
+                            </button>
+
+                            <button
+                                type="button"
+                                class="sr-role-btn"
+                                data-role="admin"
+                                aria-pressed="false"
+                            >
+                                <span class="material-symbols-outlined">admin_panel_settings</span>
+                                Admin
+                            </button>
+                        </div>
+                    </fieldset>
+
+                    <!-- EMAIL -->
+                    <div class="sr-form-group">
+                        <label for="srEmail">Email Address</label>
+
+                        <div class="sr-input-wrap">
+                            <span class="material-symbols-outlined sr-input-icon">mail</span>
+                            <input
+                                type="email"
+                                id="srEmail"
+                                name="email"
+                                placeholder="Enter your email address"
+                                autocomplete="username"
+                                aria-describedby="srEmailError"
+                            >
+                        </div>
+
+                        <small
+                            class="sr-field-error"
+                            id="srEmailError"
+                            aria-live="polite"
+                        ></small>
+                    </div>
+
+                    <!-- PASSWORD -->
+                    <div class="sr-form-group">
+                        <label for="srPassword">Password</label>
+
+                        <div class="sr-input-wrap">
+                            <span class="material-symbols-outlined sr-input-icon">lock</span>
+
+                            <input
+                                type="password"
+                                id="srPassword"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                aria-describedby="srPasswordError"
+                            >
+
+                            <button
+                                type="button"
+                                class="sr-password-toggle"
+                                id="srPasswordToggle"
+                                aria-label="Show password"
+                                aria-pressed="false"
+                            >
+                                <span
+                                    class="material-symbols-outlined"
+                                    id="srPasswordIcon"
+                                >visibility_off</span>
+                            </button>
+                        </div>
+
+                        <small
+                            class="sr-field-error"
+                            id="srPasswordError"
+                            aria-live="polite"
+                        ></small>
+                    </div>
+
+                    <!-- OPTIONS -->
+                    <div class="sr-login-options">
+                        <label class="sr-remember">
+                            <input type="checkbox" id="srRemember">
+                            <span>Remember Me</span>
+                        </label>
+
+                        <a href="404.html" class="sr-forgot-link">
+                            Forgot Password?
+                        </a>
+                    </div>
+
+                    <p
+                        class="sr-login-error"
+                        id="srLoginError"
+                        aria-live="polite"
+                    ></p>
+
+                    <button type="submit" class="sr-submit-btn" id="srSubmitBtn">
+                        SIGN IN
+                    
+                    </button>
+                </form>
+
+                <!-- SOCIAL LINKS -->
+                <div class="sr-social-divider">
+                    <span></span>
+                    <p>OR CONTINUE WITH</p>
+                    <span></span>
+                </div>
+
+              
+<div class="sr-social-links">
+    <a href="404.html" aria-label="Continue with Google">
+        <i class="fa-brands fa-google"></i>
+    </a>
+
+    <a href="404.html" aria-label="Continue with Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="404.html" aria-label="Continue with Apple">
+        <i class="fa-brands fa-apple"></i>
+    </a>
+</div>
+
+
+                <p class="sr-create-account">
+                    Need an account?
+                    <a href="signup.html">Create account</a>
+                </p>
+
+                <p class="sr-login-security">
+                    <span class="material-symbols-outlined">verified_user</span>
+                    Secure access to your workspace
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- =====================================================
+     STACKLY BACKUP & RECOVERY FOOTER
+===================================================== -->
+
+<footer class="backup-footer">
+
+    <div class="backup-footer-container">
+
+        <!-- ================= BRAND ================= -->
+
+        <div class="backup-footer-brand">
+
+            <a href="404.html" class="backup-footer-logo">
+                <img src="assets/red-logo.webp" alt="Stackly">
+            </a>
+
+            <p>
+                Reliable backup, recovery, and data protection solutions
+                designed to keep your business secure, available, and
+                ready for anything.
+            </p>
+
+
+            <!-- SOCIAL -->
+
+            <div class="backup-footer-social">
+
+                <a href="404.html" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="404.html" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="404.html" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a href="404.html" aria-label="X">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= EXPLORE ================= -->
+
+        <div class="backup-footer-column">
+
+            <h3>
+                <span></span>
+                Explore
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="services.html">Services</a>
+                </li>
+
+                <li>
+                    <a href="blog.html">Blog</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- ================= USEFUL LINKS ================= -->
+
+        <div class="backup-footer-column">
+
+            <h3>
+                <span></span>
+                Useful Links
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="404.html">Cloud Backup</a>
+                </li>
+
+                <li>
+                    <a href="404.html">Data Recovery</a>
+                </li>
+
+                <li>
+                    <a href="404.html">Disaster Recovery</a>
+                </li>
+
+                <li>
+                    <a href="404.html">Server Protection</a>
+                </li>
+
+                <li>
+                    <a href="404.html">Business Continuity</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- ================= NEWSLETTER ================= -->
+
+        <div class="backup-footer-newsletter">
+
+            <h3>
+                <span></span>
+                Newsletter
+            </h3>
+
+            <p>
+                Get the latest backup solutions, recovery updates,
+                security insights, and Stackly news delivered to your inbox.
+            </p>
+
+
+            <form
+                class="backup-newsletter-form"
+                id="backupNewsletterForm"
+                novalidate
+            >
+
+                <div class="backup-newsletter-input">
+
+                    <input
+                        type="email"
+                        id="backupNewsletterEmail"
+                        placeholder="Your email address"
+                        autocomplete="email"
+                    >
+
+                    <button type="submit" aria-label="Subscribe">
+
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="backup-newsletter-error"
+                    id="backupNewsletterError"
+                    aria-live="polite"
+                ></div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= BOTTOM FOOTER ================= -->
+
+    <div class="backup-footer-bottom">
+
+        <p>
+            © 2026 Stackly. All rights reserved.
+        </p>
+
+        <p class="backup-footer-crafted">
+            Crafted with
+            <span class="material-symbols-outlined">
+                favorite
+            </span>
+            by Stackly
+        </p>
+
+        <div class="backup-footer-legal">
+
+            <a href="404.html">
+                Terms & Conditions
+            </a>
+
+            <span>/</span>
+
+            <a href="404.html">
+                Privacy Policy
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+    <!-- Header JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/login.js"></script>
+
+</body>
+</html>

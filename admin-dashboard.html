@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#05091c">
+    <title>Admin Dashboard | Stackly Backup & Recovery</title>
+
+    <!-- Shared layout styles + administrator-specific design -->
+         <link rel="stylesheet" href="css/client-dashboard.css">
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+
+<div class="sr-dashboard sr-admin-dashboard">
+
+    <div class="sr-sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ADMIN SIDEBAR -->
+    <aside class="sr-sidebar" id="srSidebar">
+       <a href="#overview" class="sr-brand">
+    <img src="assets/logo 4.webp" alt="Stackly Logo">
+</a>
+
+        <div class="sr-sidebar-profile">
+            <div class="sr-avatar" id="sidebarAvatar">A</div>
+            <div class="sr-profile-info">
+                <strong id="sidebarEmail">admin@example.com</strong>
+                <span id="sidebarEmailShort">Administrator Account</span>
+                <small>ADMIN</small>
+            </div>
+        </div>
+
+        <div class="sr-sidebar-label">ADMINISTRATION</div>
+
+        <nav class="sr-sidebar-nav" aria-label="Administrator navigation">
+            <a href="#overview" class="sr-nav-link active" data-page="overview">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span>System Overview</span>
+            </a>
+            <a href="#monitoring" class="sr-nav-link" data-page="monitoring">
+                <span class="material-symbols-outlined">monitoring</span>
+                <span>Backup Monitoring</span>
+            </a>
+            <a href="#clients" class="sr-nav-link" data-page="clients">
+                <span class="material-symbols-outlined">group</span>
+                <span>Client Management</span>
+            </a>
+            <a href="#infrastructure" class="sr-nav-link" data-page="infrastructure">
+                <span class="material-symbols-outlined">dns</span>
+                <span>Infrastructure</span>
+            </a>
+            <a href="#incidents" class="sr-nav-link" data-page="incidents">
+                <span class="material-symbols-outlined">emergency_home</span>
+                <span>Recovery Incidents</span>
+            </a>
+            <a href="#security" class="sr-nav-link" data-page="security">
+                <span class="material-symbols-outlined">policy</span>
+                <span>Security Audit</span>
+            </a>
+
+            <div class="sr-sidebar-label sr-sidebar-label-spaced">OPERATIONS</div>
+
+            <a href="#reports" class="sr-nav-link" data-page="reports">
+                <span class="material-symbols-outlined">summarize</span>
+                <span>Reports & Analytics</span>
+            </a>
+            <a href="#settings" class="sr-nav-link" data-page="settings">
+                <span class="material-symbols-outlined">settings</span>
+                <span>System Settings</span>
+            </a>
+            <a href="404.html" class="sr-nav-link">
+                <span class="material-symbols-outlined">support_agent</span>
+                <span>Technical Support</span>
+            </a>
+        </nav>
+
+        <button type="button" class="sr-logout-btn" id="srLogout">
+            <span class="material-symbols-outlined">logout</span>
+            <span>Logout</span>
+        </button>
+    </aside>
+
+    <!-- MAIN WORKSPACE -->
+    <main class="sr-main">
+
+        <header class="sr-topbar">
+            <div class="sr-topbar-title">
+                <button class="sr-menu-toggle" id="srMenuToggle"
+                    type="button" aria-label="Open navigation" aria-expanded="false">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div>
+                    <h1 id="srPageTitle">System Overview</h1>
+                    <p id="srPageSubtitle">Monitor your backup and recovery environment.</p>
+                </div>
+            </div>
+
+            <div class="sr-topbar-actions">
+                <button class="sr-search-btn" type="button" id="srSearchBtn">
+                    <span class="material-symbols-outlined">search</span>
+                    <span>Search administration...</span>
+                </button>
+                <button class="sr-icon-btn" type="button" id="srNotifications"
+                    aria-label="View notifications">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <i></i>
+                </button>
+                <button class="sr-top-avatar" type="button" id="topAvatar"
+                    aria-label="Open system settings">A</button>
+            </div>
+        </header>
+
+        <div class="sr-content">
+
+            <!-- SYSTEM OVERVIEW -->
+            <section class="sr-page active" id="page-overview">
+                <div class="adm-command-banner">
+                    <div class="adm-command-copy">
+                        <span class="adm-eyebrow">STACKLY CONTROL CENTER</span>
+                        <h2>Backup operations, at a glance.</h2>
+                        <p>Review service health, backup activity, client coverage, and recovery readiness from one workspace.</p>
+                    </div>
+                    <div class="adm-command-actions">
+                        <a href="#monitoring" class="sr-btn adm-btn-bright">Monitor Backups</a>
+                        <a href="#reports" class="sr-btn adm-btn-outline">View Reports</a>
+                    </div>
+                    <div class="adm-banner-mark"><span class="material-symbols-outlined">shield_lock</span></div>
+                </div>
+
+                <div class="adm-section-heading">
+                    <div><span class="adm-eyebrow">LIVE OPERATIONS</span><h2>Platform Summary</h2></div>
+                    <span class="adm-demo-tag">DEMO METRICS</span>
+                </div>
+
+                <div class="adm-metric-grid">
+                    <article class="adm-metric-card adm-metric-dark">
+                        <div class="adm-metric-top"><span>BACKUP JOBS</span><span class="material-symbols-outlined">cloud_sync</span></div>
+                        <strong>1,284</strong><p>Illustrative total jobs</p>
+                        <div class="adm-mini-bar"><span style="width:82%"></span></div>
+                    </article>
+                    <article class="adm-metric-card">
+                        <div class="adm-metric-top"><span>ACTIVE CLIENTS</span><span class="material-symbols-outlined">group</span></div>
+                        <strong>346</strong><p>Example account count</p>
+                        <div class="adm-metric-bottom"><i class="adm-dot adm-green-dot"></i> Account coverage</div>
+                    </article>
+                    <article class="adm-metric-card">
+                        <div class="adm-metric-top"><span>STORAGE CAPACITY</span><span class="material-symbols-outlined">database</span></div>
+                        <strong>72.4 <small>TB</small></strong><p>Sample allocation total</p>
+                        <div class="adm-mini-bar adm-bar-purple"><span style="width:64%"></span></div>
+                    </article>
+                    <article class="adm-metric-card">
+                        <div class="adm-metric-top"><span>OPEN INCIDENTS</span><span class="material-symbols-outlined">warning</span></div>
+                        <strong>07</strong><p>Example review queue</p>
+                        <div class="adm-metric-bottom adm-warn-text"><i class="adm-dot adm-orange-dot"></i> Review required</div>
+                    </article>
+                </div>
+
+                <div class="adm-overview-grid">
+                    <article class="adm-panel adm-health-panel">
+                        <div class="adm-panel-heading">
+                            <div><span class="adm-eyebrow">SERVICE STATUS</span><h3>Infrastructure Health</h3><p>Illustrative service availability summary</p></div>
+                            <span class="adm-health-pill"><i></i> Sample status</span>
+                        </div>
+                        <div class="adm-health-score">
+                            <div class="adm-health-ring"><div><strong>99.9%</strong><span>Example uptime</span></div></div>
+                            <div class="adm-health-details">
+                                <div><span>Backup services</span><b>Operational</b></div>
+                                <div><span>Storage services</span><b>Operational</b></div>
+                                <div><span>Recovery services</span><b>Operational</b></div>
+                            </div>
+                        </div>
+                        <a href="#infrastructure" class="adm-panel-link">Open infrastructure details <span class="material-symbols-outlined">arrow_forward</span></a>
+                    </article>
+
+                    <article class="adm-panel adm-queue-panel">
+                        <div class="adm-panel-heading">
+                            <div><span class="adm-eyebrow">OPERATIONS QUEUE</span><h3>Items Requiring Review</h3><p>Example administrative follow-ups</p></div>
+                        </div>
+                        <a href="#incidents" class="adm-queue-item">
+                            <span class="adm-queue-icon adm-queue-red"><span class="material-symbols-outlined">emergency</span></span>
+                            <span><strong>Recovery incidents</strong><small>Review open incident records</small></span>
+                            <b>07</b>
+                        </a>
+                        <a href="#monitoring" class="adm-queue-item">
+                            <span class="adm-queue-icon adm-queue-orange"><span class="material-symbols-outlined">sync_problem</span></span>
+                            <span><strong>Backup exceptions</strong><small>Inspect failed or delayed jobs</small></span>
+                            <b>12</b>
+                        </a>
+                        <a href="#security" class="adm-queue-item">
+                            <span class="adm-queue-icon adm-queue-purple"><span class="material-symbols-outlined">policy</span></span>
+                            <span><strong>Security reviews</strong><small>Check audit activity</small></span>
+                            <b>04</b>
+                        </a>
+                    </article>
+                </div>
+
+                <article class="adm-panel">
+                    <div class="adm-panel-heading">
+                        <div><span class="adm-eyebrow">RECENT OPERATIONS</span><h3>Backup Job Monitor</h3><p>Sample records for the administrator interface</p></div>
+                        <a href="#monitoring" class="adm-panel-link">View all jobs <span class="material-symbols-outlined">arrow_forward</span></a>
+                    </div>
+                    <div class="adm-table-wrap">
+                        <table class="adm-table">
+                            <thead><tr><th>JOB REFERENCE</th><th>CLIENT</th><th>OPERATION</th><th>LAST UPDATE</th><th>STATUS</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>BK-10482</strong></td><td>Northstar Group</td><td>Incremental backup</td><td>Today</td><td><span class="adm-status adm-status-success">Completed</span></td></tr>
+                                <tr><td><strong>BK-10481</strong></td><td>Meridian Works</td><td>Cloud archive</td><td>Today</td><td><span class="adm-status adm-status-warn">Needs review</span></td></tr>
+                                <tr><td><strong>BK-10480</strong></td><td>Summit Digital</td><td>System snapshot</td><td>Yesterday</td><td><span class="adm-status adm-status-success">Completed</span></td></tr>
+                                <tr><td><strong>BK-10479</strong></td><td>Evergreen Labs</td><td>Full backup</td><td>Yesterday</td><td><span class="adm-status adm-status-pending">Queued</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <div class="adm-bottom-grid">
+                    <article class="adm-panel">
+                        <div class="adm-panel-heading"><div><span class="adm-eyebrow">CAPACITY PLANNING</span><h3>Storage Distribution</h3><p>Illustrative allocation across storage groups</p></div></div>
+                        <div class="adm-capacity-row"><div><span>Primary storage</span><b>42 TB / 60 TB</b></div><div class="adm-capacity-bar"><span style="width:70%"></span></div></div>
+                        <div class="adm-capacity-row"><div><span>Cloud archive</span><b>18 TB / 40 TB</b></div><div class="adm-capacity-bar adm-purple-bar"><span style="width:45%"></span></div></div>
+                        <div class="adm-capacity-row"><div><span>Recovery replicas</span><b>12 TB / 25 TB</b></div><div class="adm-capacity-bar adm-green-bar"><span style="width:48%"></span></div></div>
+                    </article>
+                    <article class="adm-panel adm-priority-panel">
+                        <span class="adm-eyebrow">ADMIN REMINDER</span>
+                        <h3>Keep recovery plans ready.</h3>
+                        <p>Review recovery procedures, confirm storage capacity, and ensure critical backup policies are documented.</p>
+                        <a href="#incidents" class="sr-btn adm-btn-dark">Review Recovery Queue</a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- BACKUP MONITORING -->
+            <section class="sr-page" id="page-monitoring">
+                <div class="adm-page-intro"><span class="adm-eyebrow">OPERATIONS / JOB CONTROL</span><h2>Backup Monitoring</h2><p>Inspect job queues, backup completion records, and exceptions requiring administrator review.</p></div>
+                <div class="adm-metric-grid adm-three-metrics">
+                    <article class="adm-metric-card"><div class="adm-metric-top"><span>COMPLETED JOBS</span><span class="material-symbols-outlined">task_alt</span></div><strong>1,190</strong><p>Example completed jobs</p></article>
+                    <article class="adm-metric-card"><div class="adm-metric-top"><span>QUEUED JOBS</span><span class="material-symbols-outlined">pending_actions</span></div><strong>82</strong><p>Illustrative queue size</p></article>
+                    <article class="adm-metric-card"><div class="adm-metric-top"><span>EXCEPTIONS</span><span class="material-symbols-outlined">sync_problem</span></div><strong>12</strong><p>Example review items</p></article>
+                </div>
+                <article class="adm-panel">
+                    <div class="adm-panel-heading"><div><h3>Backup Job Registry</h3><p>Demo records pending integration with the backup service API</p></div><button class="sr-btn adm-btn-dark" data-unavailable>Export Job Data</button></div>
+                    <div class="adm-table-wrap"><table class="adm-table"><thead><tr><th>REFERENCE</th><th>CLIENT</th><th>JOB TYPE</th><th>DATA SIZE</th><th>STATUS</th><th>ACTION</th></tr></thead><tbody>
+                        <tr><td><strong>BK-10482</strong></td><td>Northstar Group</td><td>Incremental</td><td>18 GB</td><td><span class="adm-status adm-status-success">Completed</span></td><td><button class="adm-table-action" data-unavailable>Inspect</button></td></tr>
+                        <tr><td><strong>BK-10481</strong></td><td>Meridian Works</td><td>Cloud archive</td><td>42 GB</td><td><span class="adm-status adm-status-warn">Needs review</span></td><td><button class="adm-table-action" data-unavailable>Inspect</button></td></tr>
+                        <tr><td><strong>BK-10480</strong></td><td>Summit Digital</td><td>Snapshot</td><td>22 GB</td><td><span class="adm-status adm-status-success">Completed</span></td><td><button class="adm-table-action" data-unavailable>Inspect</button></td></tr>
+                        <tr><td><strong>BK-10479</strong></td><td>Evergreen Labs</td><td>Full backup</td><td>64 GB</td><td><span class="adm-status adm-status-pending">Queued</span></td><td><button class="adm-table-action" data-unavailable>Inspect</button></td></tr>
+                        <tr><td><strong>BK-10478</strong></td><td>Bluepeak Systems</td><td>Incremental</td><td>12 GB</td><td><span class="adm-status adm-status-warn">Needs review</span></td><td><button class="adm-table-action" data-unavailable>Inspect</button></td></tr>
+                    </tbody></table></div>
+                </article>
+                <article class="adm-panel adm-note-panel"><span class="material-symbols-outlined">info</span><div><h3>Monitoring integration</h3><p>Connect job status, timestamps, retry controls, and logs to your backend before using this interface for live operations.</p></div></article>
+            </section>
+
+            <!-- CLIENT MANAGEMENT -->
+            <section class="sr-page" id="page-clients">
+                <div class="adm-page-intro"><span class="adm-eyebrow">CUSTOMER OPERATIONS</span><h2>Client Management</h2><p>Review client account records, assigned protection plans, and account status.</p></div>
+                <div class="adm-metric-grid adm-three-metrics">
+                    <article class="adm-metric-card"><div class="adm-metric-top"><span>TOTAL CLIENTS</span><span class="material-symbols-outlined">groups</span></div><strong>346</strong><p>Example account records</p></article>
+                    <article class="adm-metric-card"><div class="adm-metric-top"><span>ACTIVE ACCOUNTS</span><span class="material-symbols-outlined">verified_user</span></div><strong>329</strong><p>Sample active accounts</p></article>
+                    <article class="adm-metric-card"><div class="adm-metric-top"><span>REVIEW QUEUE</span><span class="material-symbols-outlined">person_search</span></div><strong>17</strong><p>Example pending reviews</p></article>
+                </div>
+                <article class="adm-panel">
+                    <div class="adm-panel-heading"><div><h3>Client Directory</h3><p>Illustrative customer records</p></div><button class="sr-btn adm-btn-dark" data-unavailable>Add Client</button></div>
+                    <div class="adm-table-wrap"><table class="adm-table"><thead><tr><th>CLIENT</th><th>ACCOUNT ID</th><th>PLAN</th><th>STORAGE</th><th>STATUS</th><th>ACTION</th></tr></thead><tbody>
+                        <tr><td><strong>Northstar Group</strong><small class="adm-cell-sub">ops@northstar.example</small></td><td>CL-2001</td><td>Business</td><td>68%</td><td><span class="adm-status adm-status-success">Active</span></td><td><button class="adm-table-action" data-unavailable>Manage</button></td></tr>
+                        <tr><td><strong>Meridian Works</strong><small class="adm-cell-sub">it@meridian.example</small></td><td>CL-2002</td><td>Enterprise</td><td>82%</td><td><span class="adm-status adm-status-warn">Review</span></td><td><button class="adm-table-action" data-unavailable>Manage</button></td></tr>
+                        <tr><td><strong>Summit Digital</strong><small class="adm-cell-sub">admin@summit.example</small></td><td>CL-2003</td><td>Business</td><td>46%</td><td><span class="adm-status adm-status-success">Active</span></td><td><button class="adm-table-action" data-unavailable>Manage</button></td></tr>
+                        <tr><td><strong>Evergreen Labs</strong><small class="adm-cell-sub">systems@evergreen.example</small></td><td>CL-2004</td><td>Standard</td><td>35%</td><td><span class="adm-status adm-status-pending">Pending</span></td><td><button class="adm-table-action" data-unavailable>Manage</button></td></tr>
+                        <tr><td><strong>Bluepeak Systems</strong><small class="adm-cell-sub">cloud@bluepeak.example</small></td><td>CL-2005</td><td>Enterprise</td><td>74%</td><td><span class="adm-status adm-status-success">Active</span></td><td><button class="adm-table-action" data-unavailable>Manage</button></td></tr>
+                    </tbody></table></div>
+                </article>
+                <article class="adm-panel adm-note-panel"><span class="material-symbols-outlined">admin_panel_settings</span><div><h3>Client account controls</h3><p>Account creation, suspension, plan changes, and access permissions must be handled through authenticated administrator APIs.</p></div></article>
+            </section>
+
+            <!-- INFRASTRUCTURE -->
+            <section class="sr-page" id="page-infrastructure">
+                <div class="adm-page-intro"><span class="adm-eyebrow">PLATFORM OPERATIONS</span><h2>Infrastructure</h2><p>Review the storage, backup processing, and recovery components in your environment.</p></div>
+                <div class="adm-infra-grid">
+                    <article class="adm-infra-card"><div class="adm-infra-icon"><span class="material-symbols-outlined">dns</span></div><span class="adm-status adm-status-success">Sample operational</span><h3>Backup Processing</h3><p>Job scheduling and backup processing services.</p><div class="adm-infra-foot"><span>Resource load</span><strong>62%</strong></div><div class="adm-capacity-bar"><span style="width:62%"></span></div></article>
+                    <article class="adm-infra-card"><div class="adm-infra-icon adm-purple-icon"><span class="material-symbols-outlined">database</span></div><span class="adm-status adm-status-success">Sample operational</span><h3>Storage Cluster</h3><p>Primary storage and archive capacity.</p><div class="adm-infra-foot"><span>Capacity used</span><strong>64%</strong></div><div class="adm-capacity-bar adm-purple-bar"><span style="width:64%"></span></div></article>
+                    <article class="adm-infra-card"><div class="adm-infra-icon adm-green-icon"><span class="material-symbols-outlined">cloud_sync</span></div><span class="adm-status adm-status-success">Sample operational</span><h3>Recovery Services</h3><p>Restore coordination and recovery resources.</p><div class="adm-infra-foot"><span>Resource load</span><strong>38%</strong></div><div class="adm-capacity-bar adm-green-bar"><span style="width:38%"></span></div></article>
+                    <article class="adm-infra-card"><div class="adm-infra-icon adm-blue-icon"><span class="material-symbols-outlined">security</span></div><span class="adm-status adm-status-success">Sample operational</span><h3>Security Services</h3><p>Access review and audit event collection.</p><div class="adm-infra-foot"><span>Review coverage</span><strong>91%</strong></div><div class="adm-capacity-bar adm-blue-bar"><span style="width:91%"></span></div></article>
+                </div>
+                <article class="adm-panel"><div class="adm-panel-heading"><div><h3>Infrastructure Review Schedule</h3><p>Recommended operational checks</p></div></div><div class="adm-review-list">
+                    <div><span class="material-symbols-outlined">database</span><div><strong>Storage capacity review</strong><p>Check retention policies and available capacity.</p></div><span class="adm-status adm-status-warn">Recommended</span></div>
+                    <div><span class="material-symbols-outlined">settings_backup_restore</span><div><strong>Recovery drill review</strong><p>Confirm recovery instructions and restoration readiness.</p></div><span class="adm-status adm-status-pending">Schedule</span></div>
+                    <div><span class="material-symbols-outlined">monitor_heart</span><div><strong>Service health review</strong><p>Inspect metrics, logs, and service alerts.</p></div><span class="adm-status adm-status-success">Checklist</span></div>
+                </div></article>
+            </section>
+
+            <!-- RECOVERY INCIDENTS -->
+            <section class="sr-page" id="page-incidents">
+                <div class="adm-page-intro"><span class="adm-eyebrow">BUSINESS CONTINUITY</span><h2>Recovery Incidents</h2><p>Coordinate incident review, restoration readiness, and follow-up activities.</p></div>
+                <div class="adm-metric-grid adm-three-metrics">
+                    <article class="adm-metric-card"><div class="adm-metric-top"><span>OPEN INCIDENTS</span><span class="material-symbols-outlined">emergency</span></div><strong>07</strong><p>Example open records</p></article>
+                    <article class="adm-metric-card"><div class="adm-metric-top"><span>UNDER REVIEW</span><span class="material-symbols-outlined">manage_search</span></div><strong>04</strong><p>Illustrative review queue</p></article>
+                    <article class="adm-metric-card"><div class="adm-metric-top"><span>RESOLVED</span><span class="material-symbols-outlined">task_alt</span></div><strong>28</strong><p>Example historical records</p></article>
+                </div>
+                <article class="adm-panel"><div class="adm-panel-heading"><div><h3>Incident Register</h3><p>Fictional examples for the administrator UI</p></div><button class="sr-btn adm-btn-dark" data-unavailable>Create Incident</button></div>
+                    <div class="adm-table-wrap"><table class="adm-table"><thead><tr><th>INCIDENT</th><th>CLIENT</th><th>PRIORITY</th><th>AREA</th><th>STATUS</th><th>ACTION</th></tr></thead><tbody>
+                        <tr><td><strong>INC-0318</strong></td><td>Meridian Works</td><td><span class="adm-priority adm-priority-high">High</span></td><td>Backup job</td><td><span class="adm-status adm-status-warn">Investigating</span></td><td><button class="adm-table-action" data-unavailable>Review</button></td></tr>
+                        <tr><td><strong>INC-0317</strong></td><td>Evergreen Labs</td><td><span class="adm-priority adm-priority-medium">Medium</span></td><td>Storage</td><td><span class="adm-status adm-status-pending">Assigned</span></td><td><button class="adm-table-action" data-unavailable>Review</button></td></tr>
+                        <tr><td><strong>INC-0316</strong></td><td>Northstar Group</td><td><span class="adm-priority adm-priority-high">High</span></td><td>Recovery</td><td><span class="adm-status adm-status-warn">Investigating</span></td><td><button class="adm-table-action" data-unavailable>Review</button></td></tr>
+                        <tr><td><strong>INC-0315</strong></td><td>Summit Digital</td><td><span class="adm-priority adm-priority-low">Low</span></td><td>Policy</td><td><span class="adm-status adm-status-success">Resolved</span></td><td><button class="adm-table-action" data-unavailable>Details</button></td></tr>
+                    </tbody></table></div>
+                </article>
+                <article class="adm-panel adm-note-panel"><span class="material-symbols-outlined">warning</span><div><h3>Incident response</h3><p>Connect this view to your incident management workflow before using it to coordinate real recovery events.</p></div></article>
+            </section>
+
+            <!-- SECURITY AUDIT -->
+            <section class="sr-page" id="page-security">
+                <div class="adm-page-intro"><span class="adm-eyebrow">GOVERNANCE & COMPLIANCE</span><h2>Security Audit</h2><p>Review security-related events, account access, and recommended control checks.</p></div>
+                <div class="adm-metric-grid adm-three-metrics">
+                    <article class="adm-metric-card"><div class="adm-metric-top"><span>AUDIT EVENTS</span><span class="material-symbols-outlined">receipt_long</span></div><strong>2,408</strong><p>Example event count</p></article>
+                    <article class="adm-metric-card"><div class="adm-metric-top"><span>ACCESS REVIEWS</span><span class="material-symbols-outlined">manage_accounts</span></div><strong>16</strong><p>Illustrative review tasks</p></article>
+                    <article class="adm-metric-card"><div class="adm-metric-top"><span>POLICY CHECKS</span><span class="material-symbols-outlined">policy</span></div><strong>94%</strong><p>Sample completion rate</p></article>
+                </div>
+                <article class="adm-panel"><div class="adm-panel-heading"><div><h3>Security Event Register</h3><p>Example audit entries; no real security events are being reported</p></div><button class="sr-btn adm-btn-dark" data-unavailable>Export Audit</button></div>
+                    <div class="adm-table-wrap"><table class="adm-table"><thead><tr><th>EVENT ID</th><th>EVENT</th><th>AREA</th><th>TIME</th><th>RESULT</th></tr></thead><tbody>
+                        <tr><td><strong>AUD-8001</strong></td><td>Administrator access review</td><td>Identity</td><td>Today</td><td><span class="adm-status adm-status-success">Recorded</span></td></tr>
+                        <tr><td><strong>AUD-8000</strong></td><td>Backup policy review</td><td>Policies</td><td>Today</td><td><span class="adm-status adm-status-success">Recorded</span></td></tr>
+                        <tr><td><strong>AUD-7999</strong></td><td>Storage permissions check</td><td>Storage</td><td>Yesterday</td><td><span class="adm-status adm-status-warn">Review</span></td></tr>
+                        <tr><td><strong>AUD-7998</strong></td><td>Recovery access validation</td><td>Recovery</td><td>Yesterday</td><td><span class="adm-status adm-status-success">Recorded</span></td></tr>
+                    </tbody></table></div>
+                </article>
+                <article class="adm-panel"><div class="adm-panel-heading"><div><h3>Security Review Checklist</h3><p>Recommended governance controls</p></div></div><div class="adm-review-list">
+                    <div><span class="material-symbols-outlined">key</span><div><strong>Privileged account review</strong><p>Verify that administrator access is limited to authorized staff.</p></div><button class="adm-table-action" data-unavailable>Open</button></div>
+                    <div><span class="material-symbols-outlined">history</span><div><strong>Audit retention review</strong><p>Confirm event retention and access policies.</p></div><button class="adm-table-action" data-unavailable>Open</button></div>
+                    <div><span class="material-symbols-outlined">verified_user</span><div><strong>Recovery permission review</strong><p>Validate who can access protected data and initiate restores.</p></div><button class="adm-table-action" data-unavailable>Open</button></div>
+                </div></article>
+            </section>
+
+            <!-- REPORTS -->
+            <section class="sr-page" id="page-reports">
+                <div class="adm-page-intro"><span class="adm-eyebrow">PERFORMANCE & INSIGHTS</span><h2>Reports & Analytics</h2><p>Review illustrative backup performance, capacity trends, and operational reporting categories.</p></div>
+                <div class="adm-report-grid">
+                    <article class="adm-report-card"><div class="adm-report-icon"><span class="material-symbols-outlined">cloud_done</span></div><h3>Backup Performance</h3><p>Review job completion, exceptions, and processing duration.</p><button class="sr-btn adm-btn-dark" data-unavailable>Generate Report</button></article>
+                    <article class="adm-report-card"><div class="adm-report-icon adm-purple-icon"><span class="material-symbols-outlined">database</span></div><h3>Storage Utilization</h3><p>Review allocation, retention, and capacity planning.</p><button class="sr-btn adm-btn-dark" data-unavailable>Generate Report</button></article>
+                    <article class="adm-report-card"><div class="adm-report-icon adm-green-icon"><span class="material-symbols-outlined">settings_backup_restore</span></div><h3>Recovery Readiness</h3><p>Review restoration plans, recovery checks, and open incidents.</p><button class="sr-btn adm-btn-dark" data-unavailable>Generate Report</button></article>
+                    <article class="adm-report-card"><div class="adm-report-icon adm-blue-icon"><span class="material-symbols-outlined">policy</span></div><h3>Security & Audit</h3><p>Review access controls, policy checks, and audit records.</p><button class="sr-btn adm-btn-dark" data-unavailable>Generate Report</button></article>
+                </div>
+                <article class="adm-panel"><div class="adm-panel-heading"><div><h3>Reporting Guidance</h3><p>Suggested reporting workflow</p></div></div><div class="adm-review-list">
+                    <div><span class="material-symbols-outlined">filter_alt</span><div><strong>Select a reporting period</strong><p>Choose a time window appropriate for the operational question.</p></div></div>
+                    <div><span class="material-symbols-outlined">analytics</span><div><strong>Verify source data</strong><p>Confirm that metrics originate from trusted application records.</p></div></div>
+                    <div><span class="material-symbols-outlined">description</span><div><strong>Prepare a report</strong><p>Connect the reporting API to generate downloadable summaries.</p></div></div>
+                </div></article>
+            </section>
+
+            <!-- SYSTEM SETTINGS -->
+            <section class="sr-page" id="page-settings">
+                <div class="adm-page-intro"><span class="adm-eyebrow">PLATFORM CONFIGURATION</span><h2>System Settings</h2><p>Review platform configuration areas and administrator account information.</p></div>
+                <article class="adm-panel adm-admin-profile">
+                    <div class="adm-admin-avatar" id="settingsAvatar">A</div>
+                    <div class="adm-admin-profile-copy"><span class="adm-eyebrow">ADMINISTRATOR ACCOUNT</span><h3 id="settingsEmail">admin@example.com</h3><p>Signed-in account for the Stackly administration interface.</p><span class="adm-status adm-status-success">Admin role selected</span></div>
+                </article>
+                <div class="adm-settings-grid">
+                    <article class="adm-settings-card"><span class="material-symbols-outlined">tune</span><h3>Backup Policies</h3><p>Review scheduling, retention, and protection policy configuration.</p><button class="adm-table-action" data-unavailable>Configure</button></article>
+                    <article class="adm-settings-card"><span class="material-symbols-outlined">database</span><h3>Storage Configuration</h3><p>Review storage pools, capacity thresholds, and archive targets.</p><button class="adm-table-action" data-unavailable>Configure</button></article>
+                    <article class="adm-settings-card"><span class="material-symbols-outlined">security</span><h3>Access & Permissions</h3><p>Review administrator privileges and client access policies.</p><button class="adm-table-action" data-unavailable>Configure</button></article>
+                    <article class="adm-settings-card"><span class="material-symbols-outlined">notifications_active</span><h3>System Alerts</h3><p>Review alert routing and operational notification preferences.</p><button class="adm-table-action" data-unavailable>Configure</button></article>
+                </div>
+                <article class="adm-panel adm-note-panel"><span class="material-symbols-outlined">info</span><div><h3>Production configuration</h3><p>These settings are interface placeholders. Connect them to authorized backend endpoints before enabling system-wide changes.</p></div></article>
+            </section>
+
+            <footer class="sr-dashboard-footer">
+                <span>© 2026 Stackly Backup & Recovery Solutions</span>
+                <span>Secure operations. Reliable recovery.</span>
+            </footer>
+        </div>
+    </main>
+</div>
+
+<script src="js/admin-dashboard.js"></script>
+</body>
+</html>

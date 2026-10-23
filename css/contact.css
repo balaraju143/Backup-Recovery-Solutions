@@ -1,0 +1,1302 @@
+
+/* CONTACT HERO */
+.backup-contact-hero {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 540px;
+    padding: 110px 20px 80px;
+    overflow: hidden;
+    background: #05091c;
+    color: #fff;
+    text-align: center;
+}
+
+.backup-contact-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at 15% 15%, rgba(48, 57, 91, 0.24), transparent 45%),
+        radial-gradient(ellipse at 85% 80%, rgba(255, 61, 0, 0.07), transparent 35%);
+    pointer-events: none;
+}
+
+.backup-contact-hero-content {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.contact-hero-title {
+    margin: 0 0 22px;
+    color: #fff;
+    font-size: clamp(38px, 5vw, 66px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.contact-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    min-height: 44px;
+    padding: 0 20px;
+    border-radius: 5px;
+    background: #171c30;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.contact-breadcrumb a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.contact-breadcrumb a:hover {
+    color: #ff3d00;
+}
+
+.contact-breadcrumb-separator {
+    color: #fff;
+}
+
+.contact-breadcrumb-current {
+    color: #ff3d00;
+}
+
+.contact-hero-scroll {
+    position: absolute;
+    bottom: 27px;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    transform: translateX(-50%);
+    border: 1px solid #ff3d00;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.contact-hero-scroll span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ff3d00;
+    animation: contactPulse 1.8s ease-in-out infinite;
+}
+
+.contact-hero-scroll:hover {
+    background: rgba(255, 61, 0, 0.12);
+}
+
+@keyframes contactPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.55;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .backup-contact-hero {
+        min-height: 460px;
+        padding: 100px 16px 75px;
+    }
+
+    .contact-hero-title {
+        font-size: clamp(34px, 9vw, 48px);
+        letter-spacing: -0.5px;
+    }
+
+    .contact-breadcrumb {
+        gap: 13px;
+        min-height: 42px;
+        padding: 0 15px;
+        font-size: 10px;
+    }
+
+    .contact-hero-scroll {
+        bottom: 18px;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (max-width: 380px) {
+    .backup-contact-hero {
+        min-height: 430px;
+    }
+
+    .contact-hero-title {
+        font-size: 33px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-hero-scroll span {
+        animation: none;
+    }
+}
+
+
+
+/* ==========================================
+   STACKLY CONTACT FORM SECTION
+========================================== */
+
+.stackly-contact-section {
+    padding: 75px 5%;
+    background: #f5f6f8;
+    color: #05091c;
+    overflow: hidden;
+}
+
+.stackly-contact-container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+/* HEADING */
+
+.stackly-contact-heading {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 26px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #dce0e7;
+}
+
+.stackly-contact-heading h2 {
+    max-width: 540px;
+    margin: 0;
+    color: #05091c;
+    font-size: clamp(27px, 3.3vw, 40px);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.8px;
+}
+
+.stackly-contact-heading p {
+    max-width: 450px;
+    margin: 0;
+    color: #626d80;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* IMAGE + FORM */
+
+.stackly-contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.95fr);
+    align-items: center;
+    gap: 0;
+}
+
+/* IMAGE */
+
+.stackly-contact-visual {
+    position: relative;
+    min-width: 0;
+    min-height: 450px;
+    overflow: hidden;
+    border-radius: 12px 0 0 12px;
+    background: #e6e9ee;
+}
+
+.stackly-contact-visual > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+.stackly-contact-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 45%,
+        rgba(5, 9, 28, 0.8) 100%
+    );
+    pointer-events: none;
+}
+
+.stackly-contact-image-caption {
+    position: absolute;
+    z-index: 1;
+    right: 22px;
+    bottom: 24px;
+    left: 22px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: #fff;
+}
+
+.stackly-contact-image-caption > .material-symbols-outlined {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 10px;
+    background: rgba(255,255,255,.12);
+    color: #ff6035;
+    font-size: 23px;
+}
+
+.stackly-contact-image-caption h3 {
+    margin: 0 0 5px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.stackly-contact-image-caption p {
+    margin: 0;
+    color: #e0e4ed;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* FORM CARD */
+
+.stackly-contact-form-card {
+    position: relative;
+    z-index: 2;
+    min-width: 0;
+    padding: 34px;
+    border: 1px solid #e8e9ed;
+    border-radius: 0 12px 12px 0;
+    background: #fff;
+    box-shadow: 0 18px 50px rgba(5, 9, 28, 0.08);
+}
+
+.stackly-contact-kicker {
+    display: block;
+    margin-bottom: 9px;
+    color: #ff3d00;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.stackly-form-heading h3 {
+    margin: 0 0 7px;
+    color: #05091c;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.stackly-form-heading > p {
+    margin: 0 0 24px;
+    color: #778094;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* FIELDS */
+
+.stackly-field {
+    min-width: 0;
+    margin-bottom: 17px;
+}
+
+.stackly-field label {
+    display: block;
+    margin-bottom: 7px;
+    color: #30394c;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.stackly-field input,
+.stackly-field textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 12px 13px;
+    border: 1px solid #dce0e7;
+    border-radius: 6px;
+    outline: none;
+    background: #f8f9fb;
+    color: #10182b;
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 1.6;
+    transition: border-color .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.stackly-field input {
+    min-height: 44px;
+}
+
+.stackly-field textarea {
+    min-height: 115px;
+    resize: vertical;
+}
+
+.stackly-field input::placeholder,
+.stackly-field textarea::placeholder {
+    color: #9299a7;
+    opacity: 1;
+}
+
+.stackly-field input:focus,
+.stackly-field textarea:focus {
+    border-color: #ff6035;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(255, 61, 0, 0.08);
+}
+
+.stackly-field input.stackly-invalid,
+.stackly-field textarea.stackly-invalid {
+    border-color: #dc2626;
+    background: #fffafa;
+}
+
+.stackly-field input.stackly-valid,
+.stackly-field textarea.stackly-valid {
+    border-color: #249663;
+}
+
+.stackly-field-error {
+    display: block;
+    min-height: 0;
+    margin-top: 0;
+    color: #c62828;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.stackly-field-error:not(:empty) {
+    margin-top: 5px;
+}
+
+/* SUBMIT BUTTON */
+
+.stackly-contact-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 50%;
+    text-align: center;
+    min-height: 47px;
+    margin-top: 5px;
+    padding: 12px 18px;
+    border: 1px solid #ff3d00;
+    border-radius: 6px;
+    background: #ff3d00;
+    color: #fff;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background .25s ease, border-color .25s ease, transform .25s ease;
+}
+
+.stackly-contact-submit:hover {
+    transform: translateY(-2px);
+    border-color: #df3500;
+    background: #df3500;
+}
+
+.stackly-contact-submit:focus-visible {
+    outline: 2px solid #05091c;
+    outline-offset: 3px;
+}
+
+.stackly-contact-submit .material-symbols-outlined {
+    font-size: 17px;
+}
+
+.stackly-contact-submit:disabled {
+    opacity: .7;
+    cursor: wait;
+    transform: none;
+}
+
+.stackly-contact-privacy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 15px 0 0;
+    color: #7d8697;
+    font-size: 10px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.stackly-contact-privacy .material-symbols-outlined {
+    color: #ff3d00;
+    font-size: 15px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .stackly-contact-section {
+        padding: 60px 4%;
+    }
+
+    .stackly-contact-heading {
+        gap: 24px;
+    }
+
+    .stackly-contact-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .stackly-contact-form-card {
+        padding: 24px;
+    }
+
+    .stackly-contact-visual,
+    .stackly-contact-visual > img {
+        min-height: 480px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .stackly-contact-section {
+        padding: 48px 16px;
+    }
+
+    .stackly-contact-heading {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 13px;
+        margin-bottom: 24px;
+        padding-bottom: 22px;
+        text-align: center;
+    }
+
+    .stackly-contact-heading h2 {
+        max-width: 440px;
+        margin: 0 auto;
+        font-size: clamp(25px, 7vw, 33px);
+        letter-spacing: -0.5px;
+    }
+
+    .stackly-contact-heading p {
+        max-width: 440px;
+        margin: 0 auto;
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .stackly-contact-layout {
+        width: 100%;
+        max-width: 480px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+        margin: 0 auto;
+    }
+
+    .stackly-contact-visual {
+        min-height: 290px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .stackly-contact-visual > img {
+        min-height: 290px;
+    }
+
+    .stackly-contact-image-caption {
+        right: 16px;
+        bottom: 17px;
+        left: 16px;
+    }
+
+    .stackly-contact-form-card {
+        width: 100%;
+        padding: 24px 19px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .stackly-form-heading h3 {
+        font-size: 23px;
+    }
+
+    .stackly-form-heading > p {
+        margin-bottom: 21px;
+    }
+
+    .stackly-field {
+        margin-bottom: 16px;
+    }
+
+    .stackly-field input,
+    .stackly-field textarea {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .stackly-contact-section {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .stackly-contact-form-card {
+        padding: 21px 14px;
+    }
+
+    .stackly-contact-visual,
+    .stackly-contact-visual > img {
+        min-height: 250px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stackly-contact-section * {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+
+
+/* =====================================
+   STACKLY CONTACT INFORMATION
+===================================== */
+
+.stackly-contact-info {
+    padding: 85px 5%;
+    overflow: hidden;
+    background: #ffffff;
+    color: #05091c;
+}
+
+.stackly-contact-info-container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.stackly-contact-info-heading {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    align-items: end;
+    gap: 45px;
+    margin-bottom: 38px;
+}
+
+.stackly-contact-label {
+    display: block;
+    margin-bottom: 13px;
+    color: #ff3d00;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.stackly-contact-info-title h2 {
+    margin: 0;
+    color: #05091c;
+    font-size: clamp(28px, 3.4vw, 42px);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.7px;
+}
+
+.stackly-contact-info-heading > p {
+    max-width: 480px;
+    margin: 0;
+    color: #687286;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* FOUR CONTACT CARDS */
+
+.stackly-contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.stackly-contact-info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 205px;
+    padding: 25px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    background: #111a30;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.stackly-contact-info-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 61, 0, 0.5);
+    background: #19243b;
+    box-shadow: 0 15px 32px rgba(5, 9, 28, 0.13);
+}
+
+.stackly-contact-info-card > .material-symbols-outlined {
+    margin-bottom: 20px;
+    color: #ff5930;
+    font-size: 29px;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+}
+
+.stackly-contact-info-card h3 {
+    margin: 0 0 9px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.stackly-contact-info-card p {
+    margin: 0 0 10px;
+    color: #c1c9d8;
+    font-size: 11px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.stackly-contact-info-card strong {
+    color: #ff704b;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+    .stackly-contact-info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .stackly-contact-info-heading {
+        gap: 25px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .stackly-contact-info {
+        padding: 55px 16px;
+    }
+
+    .stackly-contact-info-heading {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+        margin-bottom: 27px;
+        text-align: center;
+    }
+
+    .stackly-contact-info-title h2 {
+        font-size: clamp(26px, 7vw, 34px);
+        letter-spacing: -0.4px;
+    }
+
+    .stackly-contact-info-heading > p {
+        max-width: 450px;
+        margin: 0 auto;
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .stackly-contact-info-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+        width: 100%;
+        max-width: 440px;
+        margin: 0 auto;
+    }
+
+    .stackly-contact-info-card {
+        min-height: 175px;
+        padding: 24px 18px;
+        border-radius: 10px;
+    }
+
+    .stackly-contact-info-card > .material-symbols-outlined {
+        margin-bottom: 13px;
+        font-size: 27px;
+    }
+
+    .stackly-contact-info-card h3 {
+        font-size: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stackly-contact-info-card {
+        transition: none;
+    }
+}
+
+
+
+/* =====================================
+   STACKLY GOOGLE MAP SECTION
+===================================== */
+
+.stackly-map-section {
+    padding: 75px 5%;
+    background: #f5f6f8;
+    color: #05091c;
+    overflow: hidden;
+}
+
+.stackly-map-container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.stackly-map-heading {
+    max-width: 720px;
+    margin: 0 auto 32px;
+    text-align: center;
+}
+
+.stackly-map-eyebrow {
+    display: block;
+    margin-bottom: 12px;
+    color: #ff3d00;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.stackly-map-heading h2 {
+    margin: 0 0 13px;
+    color: #05091c;
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.7px;
+}
+
+.stackly-map-heading p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #687286;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* MAP FRAME */
+
+.stackly-map-frame {
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+    border: 1px solid #e2e6ed;
+    border-radius: 12px;
+    background: #e9edf2;
+    box-shadow: 0 14px 35px rgba(5, 9, 28, 0.07);
+}
+
+.stackly-map-frame iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ADDRESS FOOTER */
+
+.stackly-map-footer {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 20px;
+    padding: 20px 22px;
+    border: 1px solid #e3e6ed;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.stackly-map-footer > .material-symbols-outlined {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    background: #fff0e9;
+    color: #ff3d00;
+    font-size: 23px;
+}
+
+.stackly-map-footer > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.stackly-map-footer h3 {
+    margin: 0 0 5px;
+    color: #10182b;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.stackly-map-footer p {
+    margin: 0;
+    color: #748095;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.stackly-map-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 18px;
+    border: 1px solid #ff3d00;
+    border-radius: 5px;
+    background: #ff3d00;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    transition: background .25s ease;
+}
+
+.stackly-map-link:hover {
+    background: #df3500;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .stackly-map-section {
+        padding: 52px 16px;
+    }
+
+    .stackly-map-heading {
+        margin-bottom: 25px;
+    }
+
+    .stackly-map-heading h2 {
+        font-size: clamp(26px, 7vw, 34px);
+    }
+
+    .stackly-map-heading p {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .stackly-map-frame {
+        height: 300px;
+        border-radius: 9px;
+    }
+
+    .stackly-map-footer {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .stackly-map-footer > div {
+        flex-basis: calc(100% - 60px);
+    }
+
+    .stackly-map-link {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stackly-map-link {
+        transition: none;
+    }
+}
+
+
+
+/* =====================================
+   STACKLY CONTACT FAQ
+===================================== */
+
+.stackly-contact-faq {
+    padding: 85px 5%;
+    background: #fff;
+    color: #05091c;
+    overflow: hidden;
+}
+
+.stackly-faq-container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+/* LEFT IMAGE */
+
+.stackly-faq-visual {
+    position: relative;
+    min-width: 0;
+    min-height: 590px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #111a30;
+}
+
+.stackly-faq-visual > img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.stackly-faq-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(5, 9, 28, 0.02) 25%,
+        rgba(5, 9, 28, 0.88) 100%
+    );
+    pointer-events: none;
+}
+
+.stackly-faq-image-overlay {
+    position: absolute;
+    z-index: 1;
+    right: 25px;
+    bottom: 28px;
+    left: 25px;
+    color: #fff;
+}
+
+.stackly-faq-image-overlay > .material-symbols-outlined {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 17px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 10px;
+    background: rgba(255,255,255,.12);
+    color: #ff6035;
+    font-size: 26px;
+}
+
+.stackly-faq-image-overlay h3 {
+    max-width: 340px;
+    margin: 0 0 10px;
+    color: #fff;
+    font-size: 24px;
+    line-height: 1.35;
+}
+
+.stackly-faq-image-overlay p {
+    max-width: 350px;
+    margin: 0 0 20px;
+    color: #d7dce6;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.stackly-faq-image-overlay a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 17px;
+    border-radius: 5px;
+    background: #ff3d00;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: background .25s ease;
+}
+
+.stackly-faq-image-overlay a:hover {
+    background: #df3500;
+}
+
+/* RIGHT CONTENT */
+
+.stackly-faq-content {
+    min-width: 0;
+}
+
+.stackly-faq-eyebrow {
+    display: block;
+    margin-bottom: 12px;
+    color: #ff3d00;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.stackly-faq-content > h2 {
+    margin: 0 0 14px;
+    color: #05091c;
+    font-size: clamp(28px, 3.3vw, 40px);
+    font-weight: 800;
+    line-height: 1.23;
+    letter-spacing: -0.7px;
+}
+
+.stackly-faq-intro {
+    margin: 0 0 27px;
+    color: #6d778a;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* FAQ ACCORDION */
+
+.stackly-faq-list {
+    border-top: 1px solid #e5e8ee;
+}
+
+.stackly-faq-item {
+    border-bottom: 1px solid #e5e8ee;
+}
+
+.stackly-faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 19px 0;
+    color: #111a30;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.65;
+    list-style: none;
+    cursor: pointer;
+}
+
+.stackly-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.stackly-faq-item summary::marker {
+    content: "";
+}
+
+.stackly-faq-item summary > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border: 1px solid #e3e6ec;
+    border-radius: 50%;
+    color: #ff3d00;
+    font-size: 19px;
+    transition: transform .25s ease, background .25s ease;
+}
+
+.stackly-faq-item[open] summary > span {
+    transform: rotate(45deg);
+    border-color: #ff3d00;
+    background: #fff0e9;
+}
+
+.stackly-faq-item > p {
+    margin: -3px 38px 19px 0;
+    color: #6d778a;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* BOTTOM CTA */
+
+.stackly-faq-bottom {
+    margin-top: 25px;
+    padding: 19px;
+    border: 1px solid #e7e9ef;
+    border-radius: 8px;
+    background: #f7f8fa;
+}
+
+.stackly-faq-bottom > p {
+    margin: 0 0 12px;
+    color: #4e5a70;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.stackly-faq-contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ff3d00;
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.stackly-faq-contact-link .material-symbols-outlined {
+    font-size: 17px;
+    transition: transform .25s ease;
+}
+
+.stackly-faq-contact-link:hover .material-symbols-outlined {
+    transform: translateX(4px);
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+    .stackly-contact-faq {
+        padding: 65px 4%;
+    }
+
+    .stackly-faq-container {
+        gap: 32px;
+    }
+
+    .stackly-faq-visual {
+        min-height: 550px;
+    }
+
+    .stackly-faq-image-overlay {
+        right: 18px;
+        bottom: 22px;
+        left: 18px;
+    }
+
+    .stackly-faq-image-overlay h3 {
+        font-size: 21px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+    .stackly-contact-faq {
+        padding: 52px 16px;
+    }
+
+    .stackly-faq-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .stackly-faq-visual {
+        width: 100%;
+        min-height: 360px;
+        border-radius: 10px;
+    }
+
+    .stackly-faq-image-overlay {
+        right: 18px;
+        bottom: 20px;
+        left: 18px;
+    }
+
+    .stackly-faq-image-overlay h3 {
+        font-size: 22px;
+    }
+
+    .stackly-faq-content > h2 {
+        font-size: clamp(27px, 7vw, 35px);
+    }
+
+    .stackly-faq-intro {
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+
+    .stackly-faq-item summary {
+        padding: 16px 0;
+        font-size: 12px;
+    }
+
+    .stackly-faq-item > p {
+        margin-right: 0;
+        font-size: 12px;
+    }
+
+    .stackly-faq-bottom {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 380px) {
+    .stackly-contact-faq {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .stackly-faq-visual {
+        min-height: 320px;
+    }
+
+    .stackly-faq-image-overlay h3 {
+        font-size: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stackly-contact-faq * {
+        transition: none !important;
+    }
+}

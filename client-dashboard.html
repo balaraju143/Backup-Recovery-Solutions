@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard | Stackly Backup & Recovery</title>
+
+    <link rel="stylesheet" href="css/client-dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+
+<div class="sr-dashboard">
+
+    <!-- MOBILE OVERLAY -->
+    <div class="sr-sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sr-sidebar" id="srSidebar">
+
+      <a href="#overview" class="sr-brand">
+    <img src="assets/logo 4.webp" alt="Stackly Logo">
+   </a>
+
+        <div class="sr-sidebar-profile">
+            <div class="sr-avatar" id="sidebarAvatar">C</div>
+            <div class="sr-profile-info">
+                <strong id="sidebarEmail">client@example.com</strong>
+                <span id="sidebarEmailShort">Client Account</span>
+                <small>CLIENT</small>
+            </div>
+        </div>
+
+        <div class="sr-sidebar-label">WORKSPACE</div>
+
+        <nav class="sr-sidebar-nav" aria-label="Client dashboard navigation">
+            <a href="#overview" class="sr-nav-link active" data-page="overview">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span>Overview</span>
+            </a>
+
+            <a href="#backups" class="sr-nav-link" data-page="backups">
+                <span class="material-symbols-outlined">cloud_upload</span>
+                <span>My Backups</span>
+            </a>
+
+            <a href="#recovery" class="sr-nav-link" data-page="recovery">
+                <span class="material-symbols-outlined">settings_backup_restore</span>
+                <span>Recovery Center</span>
+            </a>
+
+            <a href="#devices" class="sr-nav-link" data-page="devices">
+                <span class="material-symbols-outlined">devices</span>
+                <span>Protected Devices</span>
+            </a>
+
+            <a href="#security" class="sr-nav-link" data-page="security">
+                <span class="material-symbols-outlined">verified_user</span>
+                <span>Security & Alerts</span>
+            </a>
+
+            <a href="#activity" class="sr-nav-link" data-page="activity">
+                <span class="material-symbols-outlined">history</span>
+                <span>Activity History</span>
+            </a>
+
+            <div class="sr-sidebar-label sr-sidebar-label-spaced">ACCOUNT</div>
+
+            <a href="#plans" class="sr-nav-link" data-page="plans">
+                <span class="material-symbols-outlined">workspace_premium</span>
+                <span>Plans & Usage</span>
+            </a>
+
+            <a href="#settings" class="sr-nav-link" data-page="settings">
+                <span class="material-symbols-outlined">settings</span>
+                <span>Account Settings</span>
+            </a>
+
+            <a href="404.html" class="sr-nav-link">
+                <span class="material-symbols-outlined">support_agent</span>
+                <span>Support Center</span>
+            </a>
+        </nav>
+
+        <button type="button" class="sr-logout-btn" id="srLogout">
+            <span class="material-symbols-outlined">logout</span>
+            <span>Logout</span>
+        </button>
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main class="sr-main">
+
+        <!-- TOP HEADER -->
+        <header class="sr-topbar">
+            <div class="sr-topbar-title">
+                <button class="sr-menu-toggle" id="srMenuToggle" aria-label="Open navigation" aria-expanded="false">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+
+                <div>
+                    <h1 id="srPageTitle">Overview</h1>
+                    <p id="srPageSubtitle">Your backup and recovery workspace at a glance.</p>
+                </div>
+            </div>
+
+            <div class="sr-topbar-actions">
+                <button class="sr-search-btn" id="srSearchBtn" type="button">
+                    <span class="material-symbols-outlined">search</span>
+                    <span>Search workspace...</span>
+                </button>
+
+                <button class="sr-icon-btn" type="button" aria-label="Notifications" id="srNotifications">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <i></i>
+                </button>
+
+                <button class="sr-top-avatar" id="topAvatar" type="button" aria-label="Account settings">C</button>
+            </div>
+        </header>
+
+        <!-- SCROLLABLE CONTENT -->
+        <div class="sr-content">
+
+            <!-- OVERVIEW -->
+            <section class="sr-page active" id="page-overview" data-title="Overview"
+                data-subtitle="Your backup and recovery workspace at a glance.">
+
+                <div class="sr-welcome-banner">
+                    <div>
+                        <span class="sr-banner-eyebrow">YOUR SECURE WORKSPACE</span>
+                        <h2>Welcome back, <span class="sr-display-email">Client</span></h2>
+                        <p>Monitor your protected data, review backup activity, and plan your next recovery step.</p>
+                    </div>
+                    <div class="sr-banner-actions">
+                        <a href="#backups" class="sr-btn sr-btn-light">View Backups</a>
+                        <a href="#recovery" class="sr-btn sr-btn-outline">Recovery Center</a>
+                    </div>
+                </div>
+
+                <div class="sr-stat-grid">
+                    <article class="sr-stat-card">
+                        <div class="sr-stat-icon orange"><span class="material-symbols-outlined">cloud_done</span></div>
+                        <span class="sr-stat-label">BACKUP STATUS</span>
+                        <h3>Protected</h3>
+                        <p class="sr-positive">Workspace overview</p>
+                    </article>
+
+                    <article class="sr-stat-card">
+                        <div class="sr-stat-icon purple"><span class="material-symbols-outlined">storage</span></div>
+                        <span class="sr-stat-label">STORAGE USED</span>
+                        <h3>64 GB</h3>
+                        <p>Sample usage information</p>
+                    </article>
+
+                    <article class="sr-stat-card">
+                        <div class="sr-stat-icon green"><span class="material-symbols-outlined">devices</span></div>
+                        <span class="sr-stat-label">PROTECTED DEVICES</span>
+                        <h3>4</h3>
+                        <p>Review connected devices</p>
+                    </article>
+
+                    <article class="sr-stat-card">
+                        <div class="sr-stat-icon blue"><span class="material-symbols-outlined">history</span></div>
+                        <span class="sr-stat-label">RECENT ACTIVITIES</span>
+                        <h3>12</h3>
+                        <p>Sample activity count</p>
+                    </article>
+                </div>
+
+                <div class="sr-overview-grid">
+                    <article class="sr-panel sr-storage-panel">
+                        <div class="sr-panel-heading">
+                            <div>
+                                <h3>Storage Overview</h3>
+                                <p>Illustrative workspace storage allocation</p>
+                            </div>
+                            <a href="#plans" class="sr-text-link">View Usage</a>
+                        </div>
+
+                        <div class="sr-storage-summary">
+                            <div class="sr-storage-ring"><span>64 GB<small>Used</small></span></div>
+                            <div class="sr-storage-legend">
+                                <div><i class="dot-orange"></i><span>Backup archives</span><strong>32 GB</strong></div>
+                                <div><i class="dot-purple"></i><span>System snapshots</span><strong>20 GB</strong></div>
+                                <div><i class="dot-green"></i><span>Other files</span><strong>12 GB</strong></div>
+                            </div>
+                        </div>
+                        <p class="sr-info-note">Sample data for the interface. Connect your storage API to display real usage.</p>
+                    </article>
+
+                    <article class="sr-panel">
+                        <div class="sr-panel-heading">
+                            <div>
+                                <h3>Protection Checklist</h3>
+                                <p>Recommended account practices</p>
+                            </div>
+                        </div>
+
+                        <div class="sr-checklist">
+                            <div><span class="material-symbols-outlined sr-check">check_circle</span><p><strong>Review backup schedule</strong><small>Confirm the expected backup frequency.</small></p></div>
+                            <div><span class="material-symbols-outlined sr-check">check_circle</span><p><strong>Review recovery contacts</strong><small>Keep account recovery details current.</small></p></div>
+                            <div><span class="material-symbols-outlined sr-check">shield</span><p><strong>Check security settings</strong><small>Review access and alert preferences.</small></p></div>
+                        </div>
+                        <a href="#security" class="sr-btn sr-btn-primary sr-full-btn">Review Security</a>
+                    </article>
+                </div>
+
+                <article class="sr-panel sr-table-panel">
+                    <div class="sr-panel-heading">
+                        <div>
+                            <h3>Recent Backup Activity</h3>
+                            <p>Example activity records</p>
+                        </div>
+                        <a href="#activity" class="sr-text-link">View All Activity</a>
+                    </div>
+                    <div class="sr-table-wrap">
+                        <table class="sr-table">
+                            <thead><tr><th>BACKUP</th><th>TYPE</th><th>DATE</th><th>STATUS</th></tr></thead>
+                            <tbody>
+                                <tr><td>Workstation Archive</td><td>Incremental</td><td>Today</td><td><span class="sr-status status-success">Completed</span></td></tr>
+                                <tr><td>Project Files</td><td>Full backup</td><td>Yesterday</td><td><span class="sr-status status-success">Completed</span></td></tr>
+                                <tr><td>System Snapshot</td><td>Snapshot</td><td>Yesterday</td><td><span class="sr-status status-pending">Scheduled</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+            </section>
+
+            <!-- BACKUPS -->
+            <section class="sr-page" id="page-backups" data-title="My Backups"
+                data-subtitle="Review backup records and available backup actions.">
+                <div class="sr-page-intro">
+                    <span class="sr-section-kicker">DATA PROTECTION</span>
+                    <h2>My Backups</h2>
+                    <p>Review backup sets, check their status, and organize your protection strategy.</p>
+                </div>
+
+                <div class="sr-stat-grid">
+                    <article class="sr-stat-card"><div class="sr-stat-icon orange"><span class="material-symbols-outlined">cloud_done</span></div><span class="sr-stat-label">COMPLETED</span><h3>18</h3><p>Example backup records</p></article>
+                    <article class="sr-stat-card"><div class="sr-stat-icon green"><span class="material-symbols-outlined">schedule</span></div><span class="sr-stat-label">SCHEDULED</span><h3>3</h3><p>Upcoming backup jobs</p></article>
+                    <article class="sr-stat-card"><div class="sr-stat-icon purple"><span class="material-symbols-outlined">database</span></div><span class="sr-stat-label">DATA ARCHIVES</span><h3>6</h3><p>Example archive sets</p></article>
+                    <article class="sr-stat-card"><div class="sr-stat-icon blue"><span class="material-symbols-outlined">history</span></div><span class="sr-stat-label">LAST ACTIVITY</span><h3>Today</h3><p>Sample activity status</p></article>
+                </div>
+
+                <article class="sr-panel sr-table-panel">
+                    <div class="sr-panel-heading"><div><h3>Backup Records</h3><p>Example records pending backend integration</p></div><button class="sr-btn sr-btn-primary" data-unavailable>Request Backup</button></div>
+                    <div class="sr-table-wrap">
+                        <table class="sr-table">
+                            <thead><tr><th>BACKUP NAME</th><th>METHOD</th><th>SIZE</th><th>LAST RUN</th><th>STATUS</th><th>ACTION</th></tr></thead>
+                            <tbody>
+                                <tr><td>Workstation Archive</td><td>Incremental</td><td>18 GB</td><td>Today</td><td><span class="sr-status status-success">Completed</span></td><td><a href="#recovery" class="sr-text-link">Recover</a></td></tr>
+                                <tr><td>Project Files</td><td>Full</td><td>24 GB</td><td>Yesterday</td><td><span class="sr-status status-success">Completed</span></td><td><a href="#recovery" class="sr-text-link">Recover</a></td></tr>
+                                <tr><td>System Snapshot</td><td>Snapshot</td><td>22 GB</td><td>Scheduled</td><td><span class="sr-status status-pending">Scheduled</span></td><td><button class="sr-inline-action" data-unavailable>Details</button></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="sr-panel sr-info-panel">
+                    <span class="material-symbols-outlined">info</span>
+                    <div><h3>Backup management</h3><p>These entries are demonstration content. Connect your backup service API before enabling real backup creation, deletion, or scheduling.</p></div>
+                </article>
+            </section>
+
+            <!-- RECOVERY -->
+            <section class="sr-page" id="page-recovery" data-title="Recovery Center"
+                data-subtitle="Explore recovery options and restoration readiness.">
+                <div class="sr-page-intro">
+                    <span class="sr-section-kicker">BUSINESS CONTINUITY</span>
+                    <h2>Recovery Center</h2>
+                    <p>Plan restoration carefully and review the steps needed to recover important data.</p>
+                </div>
+
+                <div class="sr-feature-grid">
+                    <article class="sr-feature-card"><div class="sr-feature-icon"><span class="material-symbols-outlined">restore</span></div><h3>File Recovery</h3><p>Identify the files you need and select a suitable restore point.</p><button class="sr-btn sr-btn-primary" data-unavailable>Start File Recovery</button></article>
+                    <article class="sr-feature-card"><div class="sr-feature-icon"><span class="material-symbols-outlined">devices</span></div><h3>System Recovery</h3><p>Review device recovery requirements before restoring a system.</p><button class="sr-btn sr-btn-primary" data-unavailable>Review System Recovery</button></article>
+                    <article class="sr-feature-card"><div class="sr-feature-icon"><span class="material-symbols-outlined">cloud_sync</span></div><h3>Cloud Restoration</h3><p>Plan the recovery of protected information from cloud archives.</p><button class="sr-btn sr-btn-primary" data-unavailable>Explore Cloud Restore</button></article>
+                </div>
+
+                <article class="sr-panel">
+                    <div class="sr-panel-heading"><div><h3>Recovery Readiness</h3><p>Suggested steps before restoring data</p></div></div>
+                    <div class="sr-recovery-steps">
+                        <div><span>01</span><div><h4>Choose a recovery point</h4><p>Identify the correct backup date and the data that needs to be restored.</p></div></div>
+                        <div><span>02</span><div><h4>Verify the target system</h4><p>Confirm that the destination has sufficient capacity and the right access permissions.</p></div></div>
+                        <div><span>03</span><div><h4>Review the restoration</h4><p>Check restored files and verify that critical systems work as expected.</p></div></div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- DEVICES -->
+            <section class="sr-page" id="page-devices" data-title="Protected Devices"
+                data-subtitle="Review devices included in your protection strategy.">
+                <div class="sr-page-intro"><span class="sr-section-kicker">DEVICE MANAGEMENT</span><h2>Protected Devices</h2><p>Review connected workstations, servers, and systems that require backup protection.</p></div>
+                <div class="sr-feature-grid">
+                    <article class="sr-feature-card"><div class="sr-feature-icon"><span class="material-symbols-outlined">laptop_mac</span></div><span class="sr-status status-success">Protected</span><h3>Office Workstation</h3><p>Example endpoint record for desktop backup protection.</p><button class="sr-btn sr-btn-secondary" data-unavailable>View Device</button></article>
+                    <article class="sr-feature-card"><div class="sr-feature-icon"><span class="material-symbols-outlined">dns</span></div><span class="sr-status status-success">Protected</span><h3>Business Server</h3><p>Example server record for important business services.</p><button class="sr-btn sr-btn-secondary" data-unavailable>View Device</button></article>
+                    <article class="sr-feature-card"><div class="sr-feature-icon"><span class="material-symbols-outlined">cloud</span></div><span class="sr-status status-pending">Review</span><h3>Cloud Workspace</h3><p>Example cloud environment awaiting a protection review.</p><button class="sr-btn sr-btn-secondary" data-unavailable>Review Device</button></article>
+                </div>
+                <article class="sr-panel"><div class="sr-panel-heading"><div><h3>Device Protection Guidelines</h3><p>Keep your environment organized</p></div></div><div class="sr-checklist"><div><span class="material-symbols-outlined sr-check">check_circle</span><p><strong>Confirm device ownership</strong><small>Ensure each device is assigned to the correct account.</small></p></div><div><span class="material-symbols-outlined sr-check">check_circle</span><p><strong>Review available storage</strong><small>Check capacity before increasing backup coverage.</small></p></div><div><span class="material-symbols-outlined sr-check">shield</span><p><strong>Maintain access controls</strong><small>Remove access that is no longer required.</small></p></div></div></article>
+            </section>
+
+            <!-- SECURITY -->
+            <section class="sr-page" id="page-security" data-title="Security & Alerts"
+                data-subtitle="Review account protection and notification preferences.">
+                <div class="sr-page-intro"><span class="sr-section-kicker">ACCOUNT SAFETY</span><h2>Security & Alerts</h2><p>Review important security practices and choose how you want to manage account notifications.</p></div>
+                <div class="sr-feature-grid">
+                    <article class="sr-feature-card"><div class="sr-feature-icon"><span class="material-symbols-outlined">shield_lock</span></div><h3>Account Protection</h3><p>Use strong credentials and limit access to trusted users.</p><span class="sr-status status-pending">Review recommended</span></article>
+                    <article class="sr-feature-card"><div class="sr-feature-icon"><span class="material-symbols-outlined">notifications_active</span></div><h3>Backup Alerts</h3><p>Monitor failed, delayed, and completed backup activities.</p><button class="sr-btn sr-btn-secondary" data-unavailable>Configure Alerts</button></article>
+                    <article class="sr-feature-card"><div class="sr-feature-icon"><span class="material-symbols-outlined">manage_accounts</span></div><h3>Access Review</h3><p>Review who can access your workspace and protected resources.</p><a href="#settings" class="sr-btn sr-btn-secondary">Account Settings</a></article>
+                </div>
+                <article class="sr-panel"><div class="sr-panel-heading"><div><h3>Recommended Security Practices</h3><p>Keep your backup environment resilient</p></div></div><div class="sr-checklist"><div><span class="material-symbols-outlined sr-check">check_circle</span><p><strong>Use a unique password</strong><small>Avoid reusing passwords across services.</small></p></div><div><span class="material-symbols-outlined sr-check">check_circle</span><p><strong>Verify recovery procedures</strong><small>Ensure recovery instructions are documented and accessible.</small></p></div><div><span class="material-symbols-outlined sr-check">check_circle</span><p><strong>Review account activity</strong><small>Investigate unfamiliar access or unexpected changes.</small></p></div></div></article>
+            </section>
+
+            <!-- ACTIVITY -->
+            <section class="sr-page" id="page-activity" data-title="Activity History"
+                data-subtitle="Review recent workspace activity and operational events.">
+                <div class="sr-page-intro"><span class="sr-section-kicker">WORKSPACE HISTORY</span><h2>Activity History</h2><p>Use the activity record to review backup changes, recovery planning, and account actions.</p></div>
+                <article class="sr-panel sr-table-panel">
+                    <div class="sr-panel-heading"><div><h3>Recent Events</h3><p>Illustrative records for the dashboard interface</p></div><span class="sr-status status-pending">Demo data</span></div>
+                    <div class="sr-table-wrap"><table class="sr-table"><thead><tr><th>EVENT</th><th>CATEGORY</th><th>WHEN</th><th>RESULT</th></tr></thead><tbody>
+                        <tr><td>Workstation backup completed</td><td>Backup</td><td>Today</td><td><span class="sr-status status-success">Success</span></td></tr>
+                        <tr><td>Recovery point reviewed</td><td>Recovery</td><td>Yesterday</td><td><span class="sr-status status-success">Reviewed</span></td></tr>
+                        <tr><td>Storage allocation checked</td><td>Storage</td><td>Yesterday</td><td><span class="sr-status status-success">Complete</span></td></tr>
+                        <tr><td>Device coverage review</td><td>Devices</td><td>Earlier</td><td><span class="sr-status status-pending">Review</span></td></tr>
+                        <tr><td>Security preferences checked</td><td>Security</td><td>Earlier</td><td><span class="sr-status status-success">Complete</span></td></tr>
+                    </tbody></table></div>
+                </article>
+                <article class="sr-panel sr-info-panel"><span class="material-symbols-outlined">info</span><div><h3>Activity logging</h3><p>Connect your backend audit-log endpoint to show real timestamps, user actions, and event outcomes.</p></div></article>
+            </section>
+
+            <!-- PLANS -->
+            <section class="sr-page" id="page-plans" data-title="Plans & Usage"
+                data-subtitle="Review storage allocation and service plan information.">
+                <div class="sr-page-intro"><span class="sr-section-kicker">SERVICE OVERVIEW</span><h2>Plans & Usage</h2><p>Understand storage consumption and review the services associated with your account.</p></div>
+                <div class="sr-plan-card">
+                    <div><span class="sr-plan-label">CURRENT DEMO PLAN</span><h3>Business Protection</h3><p>Illustrative plan details — no subscription is active from this demo screen.</p></div>
+                    <div class="sr-plan-capacity"><strong>64 GB</strong><span>Sample usage</span></div>
+                </div>
+                <article class="sr-panel">
+                    <div class="sr-panel-heading"><div><h3>Storage Allocation</h3><p>Example allocation summary</p></div></div>
+                    <div class="sr-usage-row"><div><span>Backup archives</span><strong>32 GB / 100 GB</strong></div><div class="sr-progress"><span style="width:32%"></span></div></div>
+                    <div class="sr-usage-row"><div><span>System snapshots</span><strong>20 GB / 100 GB</strong></div><div class="sr-progress purple-progress"><span style="width:20%"></span></div></div>
+                    <div class="sr-usage-row"><div><span>Other protected data</span><strong>12 GB / 100 GB</strong></div><div class="sr-progress green-progress"><span style="width:12%"></span></div></div>
+                    <button class="sr-btn sr-btn-primary" data-unavailable>Explore Plans</button>
+                </article>
+            </section>
+
+            <!-- SETTINGS -->
+            <section class="sr-page" id="page-settings" data-title="Account Settings"
+                data-subtitle="Review the account information displayed in your workspace.">
+                <div class="sr-page-intro"><span class="sr-section-kicker">YOUR ACCOUNT</span><h2>Account Settings</h2><p>Manage your profile information and review your account role.</p></div>
+                <article class="sr-panel sr-settings-panel">
+                    <div class="sr-settings-avatar" id="settingsAvatar">C</div>
+                    <div class="sr-settings-details">
+                        <h3>Profile Information</h3>
+                        <p>Your email is read from the address saved during login.</p>
+                        <div class="sr-settings-field"><label>Account Email</label><strong id="settingsEmail">client@example.com</strong></div>
+                        <div class="sr-settings-field"><label>Account Role</label><strong>Client</strong></div>
+                        <div class="sr-settings-field"><label>Workspace</label><strong>Stackly Backup & Recovery</strong></div>
+                        <button class="sr-btn sr-btn-primary" data-unavailable>Edit Profile</button>
+                    </div>
+                </article>
+                <article class="sr-panel sr-info-panel"><span class="material-symbols-outlined">lock</span><div><h3>Account security</h3><p>Profile editing, password changes, and multi-factor authentication should be connected to your secure account API.</p></div></article>
+            </section>
+
+            <footer class="sr-dashboard-footer">
+                <span>© 2026 Stackly Backup & Recovery Solutions</span>
+                <span>Protect. Recover. Continue.</span>
+            </footer>
+
+        </div>
+    </main>
+</div>
+
+<script src="js/client-dashboard.js"></script>
+</body>
+</html>

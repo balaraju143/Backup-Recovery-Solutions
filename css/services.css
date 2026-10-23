@@ -1,0 +1,2422 @@
+/* =========================================
+   SERVICES HERO
+========================================= */
+
+.backup-services-hero {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    min-height: 540px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #05091c;
+}
+
+
+/* Same circuit design as About hero */
+
+.backup-services-hero .backup-about-hero-pattern {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 58%;
+    height: 100%;
+
+    z-index: -1;
+
+    background-image: url("../images/circuit-pattern.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left center;
+
+    opacity: 0.75;
+
+    -webkit-mask-image: linear-gradient(
+        to right,
+        #000 0%,
+        #000 55%,
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to right,
+        #000 0%,
+        #000 55%,
+        transparent 100%
+    );
+
+    pointer-events: none;
+}
+
+
+/* Dark overlay */
+
+.backup-services-hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: -1;
+
+    background: linear-gradient(
+        to right,
+        rgba(5, 9, 28, 0.12) 0%,
+        rgba(5, 9, 28, 0.35) 40%,
+        rgba(5, 9, 28, 0.92) 75%,
+        #05091c 100%
+    );
+
+    pointer-events: none;
+}
+
+
+/* Centered content */
+
+.backup-services-hero .backup-about-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1000px;
+
+    padding: 100px 24px 90px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* Heading */
+
+.backup-services-hero .backup-about-hero-title {
+    margin: 0 0 22px;
+
+    color: #ffffff;
+
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 800;
+
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+
+    text-align: center;
+}
+
+
+/* Breadcrumb */
+
+.backup-services-hero .backup-about-breadcrumb {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    gap: 22px;
+
+    padding: 12px 20px;
+
+    border-radius: 6px;
+
+    background: #171b2c;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+.backup-services-hero .backup-about-breadcrumb a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+
+.backup-services-hero .backup-about-breadcrumb a:hover {
+    color: #ff3d00;
+}
+
+
+.backup-services-hero .backup-breadcrumb-arrow {
+    color: #ffffff;
+}
+
+
+.backup-services-hero .backup-breadcrumb-current {
+    color: #ff3d00;
+}
+
+
+/* Bottom circle */
+
+.backup-services-hero .backup-about-hero-circle {
+    position: absolute;
+
+    bottom: 40px;
+    left: 50%;
+
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ff3d00;
+    border-radius: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 2;
+}
+
+
+.backup-services-hero .backup-about-hero-circle span {
+    display: block;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #ff3d00;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .backup-services-hero {
+        min-height: 460px;
+    }
+
+    .backup-services-hero .backup-about-hero-pattern {
+        width: 100%;
+
+        opacity: 0.45;
+
+        background-position: left center;
+
+        -webkit-mask-image: linear-gradient(
+            to right,
+            #000 0%,
+            rgba(0, 0, 0, 0.65) 45%,
+            transparent 100%
+        );
+
+        mask-image: linear-gradient(
+            to right,
+            #000 0%,
+            rgba(0, 0, 0, 0.65) 45%,
+            transparent 100%
+        );
+    }
+
+    .backup-services-hero::before {
+        background: rgba(5, 9, 28, 0.48);
+    }
+
+    .backup-services-hero .backup-about-hero-content {
+        padding: 95px 18px 95px;
+    }
+
+    .backup-services-hero .backup-about-hero-title {
+        margin-bottom: 20px;
+
+        font-size: clamp(35px, 9vw, 48px);
+
+        letter-spacing: -0.8px;
+    }
+
+    .backup-services-hero .backup-about-breadcrumb {
+        gap: 15px;
+
+        padding: 11px 16px;
+
+        font-size: 13px;
+    }
+
+    .backup-services-hero .backup-about-hero-circle {
+        bottom: 24px;
+
+        width: 48px;
+        height: 48px;
+    }
+}
+
+
+@media (max-width: 380px) {
+
+    .backup-services-hero {
+        min-height: 420px;
+    }
+
+    .backup-services-hero .backup-about-hero-title {
+        font-size: 32px;
+    }
+
+    .backup-services-hero .backup-about-hero-content {
+        padding-inline: 12px;
+    }
+
+}
+
+
+/* ==========================================
+   STACKLY BACKUP SERVICES
+========================================== */
+
+.stackly-backup-services {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    padding: 90px 5% 85px;
+    overflow: hidden;
+    background: #f3f3f4;
+}
+
+.stackly-services-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* Heading */
+
+.stackly-services-heading {
+    margin-bottom: 55px;
+    text-align: center;
+}
+
+.stackly-services-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    margin-bottom: 26px;
+    padding: 11px 25px;
+    border: 1px solid #e6dddd;
+    border-radius: 40px;
+    background: #f7efed;
+    color: #ff3d00;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .3px;
+}
+
+.stackly-services-label span {
+    width: 32px;
+    height: 7px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #ff3d00;
+}
+
+.stackly-services-heading h2 {
+    margin: 0;
+    color: #05091c;
+    font-size: clamp(34px, 3.2vw, 48px);
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: -1.2px;
+}
+
+.stackly-services-heading h2 span {
+    color: #ff3d00;
+}
+
+
+/* Cards grid */
+
+.stackly-services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 27px;
+    align-items: stretch;
+}
+
+
+/* Card */
+
+.stackly-service-card {
+    position: relative;
+    min-width: 0;
+    min-height: 490px;
+    overflow: hidden;
+    border-radius: 17px;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(5, 9, 28, .025);
+    transition: box-shadow .4s ease;
+}
+
+.stackly-service-card:hover {
+    box-shadow: 0 18px 38px rgba(5, 9, 28, .1);
+}
+
+
+/* Image */
+
+.stackly-service-image {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    background: #e4e7e9;
+}
+
+.stackly-service-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .7s cubic-bezier(.2, .7, .2, 1);
+}
+
+.stackly-service-card:hover .stackly-service-image img {
+    transform: scale(1.07);
+}
+
+
+/* Orange icon overlapping image */
+
+.stackly-service-icon {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 74px;
+    height: 74px;
+    margin: -35px 0 0 32px;
+    border-radius: 50%;
+    background: #ff3d00;
+    color: #ffffff;
+    border: 0;
+    transition: transform .35s ease;
+}
+
+.stackly-service-icon .material-symbols-outlined {
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.stackly-service-card:hover .stackly-service-icon {
+    transform: rotate(-8deg) scale(1.06);
+}
+
+
+/* Content */
+
+.stackly-service-content {
+    position: relative;
+    min-height: 235px;
+    padding: 13px 30px 30px;
+}
+
+.stackly-service-content h3 {
+    margin: 0 0 19px;
+    color: #05091c;
+    font-size: 22px;
+    line-height: 1.35;
+    font-weight: 500;
+    transition: color .3s ease;
+}
+
+.stackly-service-card:hover .stackly-service-content h3 {
+    color: #ff3d00;
+}
+
+.stackly-service-content p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #737985;
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+
+/* Action links */
+
+.stackly-service-action {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 25px;
+    min-height: 42px;
+}
+
+.stackly-service-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f2f2f3;
+    color: #ff3d00;
+    text-decoration: none;
+    transition:
+        background .35s ease,
+        color .35s ease,
+        transform .35s ease;
+}
+
+.stackly-service-more .material-symbols-outlined {
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.stackly-service-more:hover {
+    background: #ff3d00;
+    color: #ffffff;
+    transform: rotate(90deg);
+}
+
+.stackly-service-readmore {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #ff3d00;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition:
+        opacity .3s ease,
+        visibility .3s ease,
+        transform .3s ease;
+}
+
+.stackly-service-readmore .material-symbols-outlined {
+    font-size: 18px;
+}
+
+.stackly-service-card:hover .stackly-service-readmore,
+.stackly-service-card:focus-within .stackly-service-readmore {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+
+/* Dotted decoration */
+
+.stackly-service-dots {
+    position: absolute;
+    right: 27px;
+    bottom: 66px;
+    width: 4px;
+    height: 65px;
+    background-image: radial-gradient(#a6a8ad 1.7px, transparent 2px);
+    background-size: 4px 17px;
+    background-repeat: repeat-y;
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   RESPONSIVE TABLET
+========================================== */
+
+@media (max-width: 1100px) {
+    .stackly-backup-services {
+        padding: 75px 4%;
+    }
+
+    .stackly-services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+    .stackly-service-card {
+        min-height: 470px;
+    }
+
+    .stackly-service-content {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+
+    .stackly-service-readmore {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+    .stackly-backup-services {
+        padding: 65px 18px;
+    }
+
+    .stackly-services-heading {
+        margin-bottom: 35px;
+        text-align: center;
+    }
+
+    .stackly-services-label {
+        gap: 9px;
+        margin-bottom: 20px;
+        padding: 9px 17px;
+        font-size: 12px;
+    }
+
+    .stackly-services-label span {
+        width: 23px;
+        height: 5px;
+    }
+
+    .stackly-services-heading h2 {
+        font-size: clamp(27px, 7.2vw, 36px);
+        line-height: 1.25;
+        letter-spacing: -.6px;
+    }
+
+    .stackly-services-heading h2 br {
+        display: none;
+    }
+
+    .stackly-services-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .stackly-service-card {
+        width: 100%;
+        min-height: 0;
+        border-radius: 15px;
+    }
+
+    .stackly-service-image {
+        height: 225px;
+    }
+
+    .stackly-service-icon {
+        width: 65px;
+        height: 65px;
+        margin-top: -31px;
+        margin-left: 23px;
+    }
+
+    .stackly-service-icon .material-symbols-outlined {
+        font-size: 31px;
+    }
+
+    .stackly-service-content {
+        min-height: 0;
+        padding: 14px 23px 26px;
+        text-align: left;
+    }
+
+    .stackly-service-content h3 {
+        margin-bottom: 12px;
+        font-size: 21px;
+    }
+
+    .stackly-service-content p {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .stackly-service-action {
+        margin-top: 20px;
+        gap: 13px;
+    }
+
+    /* Always show READ MORE on touch screens */
+    .stackly-service-readmore {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        font-size: 13px;
+    }
+
+    .stackly-service-dots {
+        right: 19px;
+        bottom: 48px;
+    }
+}
+
+
+/* ==========================================
+   STACKLY BACKUP FAQ SECTION
+========================================== */
+
+.stackly-backup-faq {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    padding: 95px 5%;
+    overflow: hidden;
+    background: #eef1f4;
+}
+
+.stackly-backup-faq-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1420px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(45px, 7vw, 100px);
+    align-items: center;
+}
+
+
+/* ==========================================
+   LEFT SIDE
+========================================== */
+
+.stackly-backup-faq-left {
+    min-width: 0;
+}
+
+.stackly-faq-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 11px 22px;
+    margin-bottom: 27px;
+
+    border: 1px solid #e3d9d5;
+    border-radius: 40px;
+    background: #f7efed;
+
+    color: #ff3d00;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .3px;
+}
+
+.stackly-faq-label span {
+    width: 32px;
+    height: 7px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #ff3d00;
+}
+
+.stackly-backup-faq-left h2 {
+    margin: 0 0 35px;
+
+    color: #05091c;
+    font-size: clamp(36px, 3.3vw, 49px);
+    font-weight: 800;
+    line-height: 1.27;
+    letter-spacing: -1.3px;
+}
+
+.stackly-backup-faq-left h2 span {
+    color: #ff3d00;
+}
+
+
+/* Image */
+
+.stackly-faq-image-wrap {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 22px;
+    background: #dce1e5;
+}
+
+.stackly-faq-image-wrap img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform .7s ease;
+}
+
+.stackly-faq-image-wrap:hover img {
+    transform: scale(1.04);
+}
+
+
+/* ==========================================
+   RIGHT SIDE
+========================================== */
+
+.stackly-backup-faq-right {
+    min-width: 0;
+}
+
+.stackly-faq-side-heading {
+    margin: 0 0 24px;
+
+    color: #05091c;
+    font-size: clamp(27px, 2.2vw, 34px);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.stackly-faq-side-heading span {
+    color: #ff3d00;
+}
+
+.stackly-faq-intro {
+    margin: 0 0 50px;
+
+    color: #737985;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   FAQ ACCORDION
+========================================== */
+
+.stackly-faq-item {
+    margin-bottom: 20px;
+
+    overflow: hidden;
+    border: 2px solid #ffffff;
+    border-radius: 17px;
+
+    background: rgba(255, 255, 255, .24);
+
+    transition:
+        background .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+.stackly-faq-item.active {
+    background: #ffffff;
+    border-color: #ffffff;
+    box-shadow: 0 10px 28px rgba(5, 9, 28, .035);
+}
+
+
+/* Question button */
+
+.stackly-faq-question {
+    width: 100%;
+    min-height: 64px;
+
+    padding: 18px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    border: 0;
+    background: transparent;
+
+    color: #05091c;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.stackly-faq-toggle {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 26px;
+    height: 26px;
+
+    color: #ff3d00;
+    font-size: 29px;
+    font-weight: 400;
+    line-height: 1;
+
+    transition: transform .3s ease;
+}
+
+.stackly-faq-item.active .stackly-faq-toggle {
+    transform: rotate(180deg);
+}
+
+
+/* Answer animation */
+
+.stackly-faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    transition: grid-template-rows .4s ease;
+}
+
+.stackly-faq-answer > div {
+    overflow: hidden;
+    padding: 0 26px;
+
+    color: #737985;
+    font-size: 15px;
+    line-height: 1.85;
+
+    transition: padding .4s ease;
+}
+
+.stackly-faq-item.active .stackly-faq-answer {
+    grid-template-rows: 1fr;
+}
+
+.stackly-faq-item.active .stackly-faq-answer > div {
+    padding: 5px 26px 27px;
+}
+
+
+/* Keyboard accessibility */
+
+.stackly-faq-question:focus-visible {
+    outline: 2px solid #ff3d00;
+    outline-offset: -4px;
+    border-radius: 14px;
+}
+
+
+/* ==========================================
+   DECORATIVE CENTER DOT
+========================================== */
+
+.stackly-faq-center-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ff3d00;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.stackly-faq-center-dot span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ff3d00;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+    .stackly-backup-faq {
+        padding: 75px 4%;
+    }
+
+    .stackly-backup-faq-container {
+        gap: 35px;
+    }
+
+    .stackly-backup-faq-left h2 {
+        font-size: 36px;
+    }
+
+    .stackly-faq-image-wrap {
+        height: 330px;
+    }
+
+    .stackly-faq-intro {
+        margin-bottom: 30px;
+    }
+
+    .stackly-faq-center-dot {
+        display: none;
+    }
+}
+
+
+/* ==========================================
+   MOBILE — CENTERED LAYOUT
+========================================== */
+
+@media (max-width: 700px) {
+    .stackly-backup-faq {
+        padding: 65px 18px;
+    }
+
+    .stackly-backup-faq-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 45px;
+        justify-items: center;
+    }
+
+    .stackly-backup-faq-left,
+    .stackly-backup-faq-right {
+        width: 100%;
+        max-width: 520px;
+        text-align: center;
+    }
+
+    .stackly-faq-label {
+        justify-content: center;
+        margin-bottom: 22px;
+        font-size: 12px;
+    }
+
+    .stackly-backup-faq-left h2 {
+        margin-bottom: 25px;
+        font-size: clamp(29px, 7vw, 39px);
+        line-height: 1.25;
+        letter-spacing: -.6px;
+    }
+
+    .stackly-backup-faq-left h2 br {
+        display: none;
+    }
+
+    .stackly-faq-image-wrap {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1.15 / 1;
+        border-radius: 17px;
+    }
+
+    .stackly-faq-side-heading {
+        margin-bottom: 18px;
+        font-size: 28px;
+        line-height: 1.35;
+    }
+
+    .stackly-faq-intro {
+        margin-bottom: 30px;
+        font-size: 14px;
+        line-height: 1.8;
+        text-align: center;
+    }
+
+    .stackly-faq-item {
+        margin-bottom: 15px;
+        border-radius: 14px;
+        text-align: center;
+    }
+
+    .stackly-faq-question {
+        min-height: 65px;
+        padding: 16px 17px;
+        gap: 10px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .stackly-faq-question > span:first-child {
+        flex: 1;
+    }
+
+    .stackly-faq-toggle {
+        width: 23px;
+        height: 23px;
+        font-size: 25px;
+    }
+
+    .stackly-faq-answer > div {
+        padding-right: 20px;
+        padding-left: 20px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .stackly-faq-item.active .stackly-faq-answer > div {
+        padding: 3px 20px 23px;
+    }
+
+    .stackly-faq-center-dot {
+        display: none;
+    }
+}
+
+
+/* Small phones */
+
+@media (max-width: 380px) {
+    .stackly-backup-faq {
+        padding: 55px 14px;
+    }
+
+    .stackly-backup-faq-left h2 {
+        font-size: 28px;
+    }
+
+    .stackly-faq-question {
+        padding: 14px 12px;
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================
+   TIMELINE SECTION
+========================================= */
+
+.stackly-timeline {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 100px 5%;
+    background: #f5f3f1;
+}
+
+.stackly-timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -140px;
+    width: 350px;
+    height: 350px;
+    border: 1px solid rgba(255, 61, 0, .12);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 35px rgba(255, 61, 0, .025),
+        0 0 0 70px rgba(255, 61, 0, .02);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.stackly-timeline-container {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+
+/* Heading */
+
+.stackly-timeline-heading {
+    max-width: 720px;
+    margin: 0 auto 75px;
+    text-align: center;
+}
+
+.stackly-timeline-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    padding: 10px 22px;
+    border: 1px solid #e5dbd7;
+    border-radius: 40px;
+    background: #fffaf8;
+    color: #ff3d00;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.stackly-timeline-label span {
+    width: 29px;
+    height: 6px;
+    border-radius: 10px;
+    background: #ff3d00;
+}
+
+.stackly-timeline-heading h2 {
+    margin: 0 0 20px;
+    color: #05091c;
+    font-size: clamp(36px, 4.2vw, 54px);
+    line-height: 1.16;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.stackly-timeline-heading h2 span {
+    color: #ff3d00;
+}
+
+.stackly-timeline-heading > p {
+    max-width: 610px;
+    margin: 0 auto;
+    color: #737985;
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+
+/* Timeline track */
+
+.stackly-timeline-track {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/* Central line */
+
+.stackly-timeline-track::before {
+    content: "";
+    position: absolute;
+    top: 35px;
+    bottom: 35px;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 61, 0, .55) 0,
+        rgba(255, 61, 0, .55) 7px,
+        transparent 7px,
+        transparent 15px
+    );
+}
+
+
+/* Timeline row */
+
+.stackly-timeline-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 82px minmax(0, 1fr);
+    align-items: center;
+    gap: 25px;
+    min-width: 0;
+}
+
+
+/* Number marker */
+
+.stackly-timeline-marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    width: 66px;
+    height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ff3d00;
+    border-radius: 50%;
+    background: #f5f3f1;
+    box-shadow: 0 0 0 8px #f5f3f1;
+}
+
+.stackly-timeline-marker span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #ff3d00;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+/* Text card */
+
+.stackly-timeline-card {
+    grid-column: 1;
+    padding: 30px;
+    border: 1px solid rgba(5, 9, 28, .055);
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 12px 35px rgba(5, 9, 28, .035);
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.stackly-timeline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 38px rgba(5, 9, 28, .08);
+}
+
+.stackly-timeline-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: #ff3d00;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.stackly-timeline-meta .material-symbols-outlined {
+    font-size: 23px;
+}
+
+.stackly-timeline-card h3 {
+    margin: 0 0 13px;
+    color: #05091c;
+    font-size: 24px;
+    line-height: 1.35;
+    font-weight: 750;
+}
+
+.stackly-timeline-card p {
+    margin: 0;
+    color: #737985;
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.stackly-timeline-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.stackly-timeline-tags span {
+    padding: 8px 11px;
+    border-radius: 30px;
+    background: #fff0eb;
+    color: #d83b0a;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* Image panel */
+
+.stackly-timeline-visual {
+    grid-column: 3;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #e2e4e6;
+}
+
+.stackly-timeline-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .7s ease;
+}
+
+.stackly-timeline-visual:hover img {
+    transform: scale(1.06);
+}
+
+
+/* Alternate row order */
+
+.stackly-timeline-item:nth-child(even) .stackly-timeline-card {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.stackly-timeline-item:nth-child(even) .stackly-timeline-visual {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+/* Bottom note */
+
+.stackly-timeline-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 65px;
+    color: #05091c;
+    text-align: center;
+}
+
+.stackly-timeline-bottom .material-symbols-outlined {
+    color: #ff3d00;
+    font-size: 27px;
+}
+
+.stackly-timeline-bottom p {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   GSAP STARTING STATES
+========================================= */
+
+.stackly-timeline-heading > *,
+.stackly-timeline-item,
+.stackly-timeline-bottom {
+    will-change: transform, opacity;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+    .stackly-timeline {
+        padding: 80px 4%;
+    }
+
+    .stackly-timeline-track {
+        gap: 35px;
+    }
+
+    .stackly-timeline-item {
+        grid-template-columns: minmax(0, 1fr) 60px minmax(0, 1fr);
+        gap: 15px;
+    }
+
+    .stackly-timeline-marker {
+        width: 54px;
+        height: 54px;
+    }
+
+    .stackly-timeline-marker span {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .stackly-timeline-card {
+        padding: 22px;
+    }
+
+    .stackly-timeline-card h3 {
+        font-size: 21px;
+    }
+
+    .stackly-timeline-visual {
+        height: 250px;
+    }
+}
+
+
+/* =========================================
+   MOBILE VERTICAL TIMELINE
+========================================= */
+
+@media (max-width: 650px) {
+    .stackly-timeline {
+        padding: 65px 18px;
+    }
+
+    .stackly-timeline-heading {
+        margin-bottom: 45px;
+        text-align: center;
+    }
+
+    .stackly-timeline-heading h2 {
+        font-size: clamp(30px, 7.5vw, 39px);
+        line-height: 1.2;
+        letter-spacing: -.7px;
+    }
+
+    .stackly-timeline-heading > p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .stackly-timeline-track {
+        gap: 35px;
+        padding-left: 0;
+    }
+
+    .stackly-timeline-track::before {
+        left: 50%;
+        top: 25px;
+        bottom: 25px;
+    }
+
+    .stackly-timeline-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding-top: 0;
+    }
+
+    .stackly-timeline-marker {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 0 auto 20px;
+        transform: none;
+        width: 58px;
+        height: 58px;
+        flex-shrink: 0;
+    }
+
+    .stackly-timeline-marker span {
+        width: 43px;
+        height: 43px;
+        font-size: 13px;
+    }
+
+    .stackly-timeline-card,
+    .stackly-timeline-item:nth-child(even) .stackly-timeline-card {
+        order: 2;
+        width: 100%;
+        grid-column: auto;
+        grid-row: auto;
+        padding: 25px 22px;
+        text-align: center;
+    }
+
+    .stackly-timeline-meta {
+        justify-content: center;
+    }
+
+    .stackly-timeline-card h3 {
+        font-size: 22px;
+    }
+
+    .stackly-timeline-card p {
+        font-size: 14px;
+    }
+
+    .stackly-timeline-tags {
+        justify-content: center;
+    }
+
+    .stackly-timeline-visual,
+    .stackly-timeline-item:nth-child(even) .stackly-timeline-visual {
+        order: 1;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1.4 / 1;
+        grid-column: auto;
+        grid-row: auto;
+        margin-bottom: 18px;
+        border-radius: 17px;
+    }
+
+    .stackly-timeline-bottom {
+        margin-top: 45px;
+        gap: 8px;
+    }
+
+    .stackly-timeline-bottom p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .stackly-timeline *,
+    .stackly-timeline *::before,
+    .stackly-timeline *::after {
+        transition-duration: .01ms !important;
+    }
+}
+
+
+/* =========================================
+   TESTIMONIAL SECTION
+========================================= */
+
+.stackly-testimonials {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 95px 5% 100px;
+    background: #ffffff;
+}
+
+.stackly-testimonials-container {
+    max-width: 1450px;
+    margin: 0 auto;
+}
+
+.stackly-testimonials-heading {
+    max-width: 800px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.stackly-testimonials-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    padding: 11px 25px;
+    margin-bottom: 24px;
+    border: 1px solid #f3d7ce;
+    border-radius: 40px;
+    background: #f6f4f3;
+    color: #ff3d00;
+    font-size: 14px;
+    font-weight: 750;
+}
+
+.stackly-testimonials-label span {
+    width: 32px;
+    height: 7px;
+    border-radius: 10px;
+    background: #ff3d00;
+}
+
+.stackly-testimonials-heading h2 {
+    margin: 0;
+    color: #05091c;
+    font-size: clamp(34px, 4vw, 49px);
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.stackly-testimonials-heading h2 span {
+    color: #ff3d00;
+}
+
+.stackly-testimonials-heading > p {
+    max-width: 620px;
+    margin: 18px auto 0;
+    color: #747985;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   SLIDER
+========================================= */
+
+.stackly-testimonials-viewport {
+    overflow: hidden;
+    padding: 10px 0 43px;
+}
+
+.stackly-testimonials-track {
+    display: flex;
+    align-items: stretch;
+    gap: 30px;
+    will-change: transform;
+}
+
+
+/* =========================================
+   TESTIMONIAL CARD
+========================================= */
+
+.stackly-testimonial-card {
+    position: relative;
+    flex: 0 0 calc((100% - 60px) / 3);
+    min-width: 0;
+    margin-top: 24px;
+    border-radius: 20px;
+    background: #f1f1f2;
+    color: #05091c;
+    transition:
+        background .45s ease,
+        color .45s ease,
+        transform .45s ease,
+        box-shadow .45s ease;
+}
+
+.stackly-testimonial-card::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: 16%;
+    width: 68%;
+    height: 4px;
+    background: linear-gradient(
+        to right,
+        #ff3d00 0 50%,
+        #05091c 50% 100%
+    );
+}
+
+.stackly-testimonial-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(rgba(255, 61, 0, .94), rgba(255, 61, 0, .96)),
+        url("../images/testimonial-world-map.webp") center / contain no-repeat;
+    transition: opacity .45s ease;
+}
+
+.stackly-testimonial-card:hover,
+.stackly-testimonial-card.is-featured {
+    background: #ff3d00;
+    color: #ffffff;
+    box-shadow: 0 18px 40px rgba(255, 61, 0, .16);
+}
+
+.stackly-testimonial-card:hover::after,
+.stackly-testimonial-card.is-featured::after {
+    opacity: 1;
+}
+
+.stackly-testimonial-card-inner {
+    position: relative;
+    z-index: 2;
+    min-height: 395px;
+    padding: 30px 28px 78px;
+    text-align: center;
+}
+
+.stackly-quote {
+    display: block;
+    height: 72px;
+    color: #ff3d00;
+    font-family: Georgia, serif;
+    font-size: 85px;
+    line-height: 1.05;
+    transition: color .4s ease;
+}
+
+.stackly-testimonial-text {
+    min-height: 105px;
+    margin: 15px 0 24px;
+    color: #777b82;
+    font-size: 15px;
+    line-height: 1.85;
+    transition: color .4s ease;
+}
+
+.stackly-testimonial-divider {
+    width: 100%;
+    height: 1px;
+    margin: 0 auto 25px;
+    background: #c9c9cb;
+    transition: background .4s ease;
+}
+
+.stackly-stars {
+    margin-bottom: 20px;
+    color: #ffbf00;
+    font-size: 21px;
+    letter-spacing: 4px;
+}
+
+.stackly-testimonial-card h3 {
+    display: inline-block;
+    margin: 0 9px 0 0;
+    color: #05091c;
+    font-size: 19px;
+    line-height: 1.5;
+    font-weight: 800;
+    transition: color .4s ease;
+}
+
+.stackly-client-role {
+    display: inline-block;
+    color: #85858a;
+    font-size: 12px;
+    font-weight: 600;
+    transition: color .4s ease;
+}
+
+
+/* Featured and hover text */
+
+.stackly-testimonial-card:hover .stackly-quote,
+.stackly-testimonial-card.is-featured .stackly-quote,
+.stackly-testimonial-card:hover .stackly-testimonial-text,
+.stackly-testimonial-card.is-featured .stackly-testimonial-text,
+.stackly-testimonial-card:hover h3,
+.stackly-testimonial-card.is-featured h3,
+.stackly-testimonial-card:hover .stackly-client-role,
+.stackly-testimonial-card.is-featured .stackly-client-role {
+    color: #ffffff;
+}
+
+.stackly-testimonial-card:hover .stackly-testimonial-divider,
+.stackly-testimonial-card.is-featured .stackly-testimonial-divider {
+    background: rgba(255,255,255,.55);
+}
+
+
+/* =========================================
+   CLIENT IMAGE
+========================================= */
+
+.stackly-client-avatar {
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    bottom: -35px;
+    width: 86px;
+    height: 86px;
+    padding: 7px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #ffffff;
+    transform: translateX(-50%);
+}
+
+.stackly-client-avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =========================================
+   CONTROLS
+========================================= */
+
+.stackly-testimonial-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 15px;
+}
+
+.stackly-testimonial-prev,
+.stackly-testimonial-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    border: 1px solid #ff3d00;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #ff3d00;
+    cursor: pointer;
+    transition: background .3s ease, color .3s ease;
+}
+
+.stackly-testimonial-prev:hover,
+.stackly-testimonial-next:hover {
+    background: #ff3d00;
+    color: #ffffff;
+}
+
+.stackly-testimonial-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.stackly-testimonial-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 20px;
+    background: #c8c8cc;
+    cursor: pointer;
+    transition: width .3s ease, background .3s ease;
+}
+
+.stackly-testimonial-dot.active {
+    width: 24px;
+    background: #ff3d00;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+    .stackly-testimonials {
+        padding: 65px 18px 80px;
+    }
+
+    .stackly-testimonials-heading {
+        margin-bottom: 35px;
+    }
+
+    .stackly-testimonials-label {
+        margin-bottom: 20px;
+        padding: 9px 18px;
+        font-size: 12px;
+    }
+
+    .stackly-testimonials-label span {
+        width: 24px;
+        height: 5px;
+    }
+
+    .stackly-testimonials-heading h2 {
+        font-size: clamp(28px, 7.5vw, 36px);
+        line-height: 1.25;
+    }
+
+    .stackly-testimonials-heading > p {
+        font-size: 14px;
+    }
+
+    .stackly-testimonials-track {
+        gap: 18px;
+    }
+
+    .stackly-testimonial-card {
+        flex-basis: 100%;
+        margin-top: 18px;
+    }
+
+    .stackly-testimonial-card-inner {
+        min-height: 355px;
+        padding: 26px 22px 75px;
+    }
+
+    .stackly-quote {
+        height: 65px;
+        font-size: 78px;
+    }
+
+    .stackly-testimonial-text {
+        min-height: 0;
+        margin: 12px 0 23px;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .stackly-testimonial-card h3 {
+        font-size: 18px;
+    }
+
+    .stackly-client-avatar {
+        bottom: -32px;
+        width: 78px;
+        height: 78px;
+    }
+
+    .stackly-testimonial-controls {
+        margin-top: 10px;
+        gap: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stackly-testimonial-card,
+    .stackly-testimonial-card::after,
+    .stackly-testimonial-card-inner * {
+        transition-duration: .01ms !important;
+    }
+}
+
+
+
+/* =========================================
+   BACKUP CTA SECTION
+========================================= */
+
+.backup-cta {
+    position: relative;
+
+    width: calc(100% - 50px);
+
+    margin: 45px auto 0;
+    margin-bottom: 30px;
+    min-height: 460px;
+
+    border-radius: 9px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ed1670 0%,
+            #f4144d 48%,
+            #ff3d00 100%
+        );
+
+    isolation: isolate;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.backup-cta-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: 650px;
+
+    text-align: center;
+
+    padding: 50px 25px;
+}
+
+
+.backup-cta-content h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(34px, 4vw, 50px);
+
+    line-height: 1.12;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+
+.backup-cta-content p {
+    max-width: 540px;
+
+    margin: 22px auto 28px;
+
+    color: rgba(255,255,255,.92);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.backup-cta-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 220px;
+
+    min-height: 58px;
+
+    padding: 0 32px;
+
+    border-radius: 50px;
+
+    background: #ffffff;
+
+    color: #ed1670;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        background .35s ease;
+}
+
+
+.backup-cta-button:hover {
+    transform: translateY(-5px);
+
+    background: #05091c;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 15px 30px rgba(5,9,28,.2);
+}
+
+
+/* =========================================
+   LEFT DECORATIVE SHAPES
+========================================= */
+
+.backup-cta-left-design {
+    position: absolute;
+
+    left: 65px;
+    top: 50%;
+
+    width: 210px;
+    height: 270px;
+
+    transform:
+        translateY(-50%)
+        rotate(-25deg);
+
+    z-index: 2;
+}
+
+
+/* purple 3D-style discs */
+
+.backup-cta-orbit {
+    position: absolute;
+
+    width: 145px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d9b6ff,
+            #9b55d7
+        );
+
+    box-shadow:
+        0 15px 25px rgba(65, 20, 110, .22);
+
+    transform: rotate(20deg);
+}
+
+
+.orbit-one {
+    top: 45px;
+    left: 20px;
+}
+
+
+.orbit-two {
+    top: 100px;
+    left: 15px;
+
+    transform:
+        rotate(35deg)
+        scale(1.12);
+
+    opacity: .85;
+}
+
+
+.orbit-three {
+    top: 155px;
+    left: 40px;
+
+    transform:
+        rotate(48deg)
+        scale(.95);
+
+    opacity: .65;
+}
+
+
+/* =========================================
+   RIGHT DECORATION
+========================================= */
+
+.backup-cta-right-design {
+    position: absolute;
+
+    right: 35px;
+    bottom: 25px;
+
+    width: 290px;
+    height: 270px;
+
+    z-index: 2;
+}
+
+
+/* orange/yellow glowing circle */
+
+.backup-cta-glow {
+    position: absolute;
+
+    top: 0;
+    right: 70px;
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fff5c7 0%,
+            #ffd45b 35%,
+            #ff9b26 70%,
+            #f86b18 100%
+        );
+
+    box-shadow:
+        0 10px 35px rgba(255,150,30,.25);
+}
+
+
+/* circuit lines */
+
+.backup-cta-lines {
+    position: absolute;
+
+    right: 0;
+    bottom: 15px;
+
+    width: 250px;
+    height: 150px;
+}
+
+
+.backup-cta-lines span {
+    position: absolute;
+
+    display: block;
+
+    width: 190px;
+    height: 4px;
+
+    background: #ffcc55;
+
+    transform: skewX(-25deg);
+
+    border-radius: 2px;
+}
+
+
+.backup-cta-lines span:nth-child(1) {
+    top: 25px;
+    right: 25px;
+}
+
+
+.backup-cta-lines span:nth-child(2) {
+    top: 55px;
+    right: 5px;
+}
+
+
+.backup-cta-lines span:nth-child(3) {
+    top: 85px;
+    right: 30px;
+}
+
+
+.backup-cta-lines span:nth-child(4) {
+    top: 115px;
+    right: 0;
+}
+
+
+/* small circuit extensions */
+
+.backup-cta-lines span::before,
+.backup-cta-lines span::after {
+    content: "";
+
+    position: absolute;
+
+    width: 4px;
+    height: 32px;
+
+    background: #ffcc55;
+}
+
+
+.backup-cta-lines span::before {
+    left: 0;
+    bottom: 0;
+}
+
+
+.backup-cta-lines span::after {
+    right: 0;
+    top: 0;
+}
+
+
+/* =========================================
+   GSAP INITIAL STATES
+========================================= */
+
+.backup-cta-content h2,
+.backup-cta-content p,
+.backup-cta-button {
+    opacity: 0;
+
+    transform: translateY(30px);
+}
+
+
+.backup-cta-left-design {
+    opacity: 0;
+
+    transform:
+        translate(-80px, -50%)
+        rotate(-35deg);
+}
+
+
+.backup-cta-right-design {
+    opacity: 0;
+
+    transform: translateX(80px);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .backup-cta {
+        width: calc(100% - 30px);
+
+        min-height: 520px;
+
+        margin-top: 35px;
+
+        border-radius: 8px;
+
+        padding: 50px 15px;
+
+        align-items: center;
+    }
+
+
+    .backup-cta-content {
+        width: 100%;
+
+        padding: 30px 15px;
+    }
+
+
+    .backup-cta-content h2 {
+        font-size: 32px;
+
+        line-height: 1.15;
+    }
+
+
+    .backup-cta-content p {
+        font-size: 14px;
+
+        margin-top: 18px;
+    }
+
+
+    /* move left design smaller */
+
+    .backup-cta-left-design {
+        left: -35px;
+
+        top: 28%;
+
+        transform:
+            translateY(-50%)
+            scale(.65)
+            rotate(-25deg);
+
+        opacity: .65;
+    }
+
+
+    /* move right design */
+
+    .backup-cta-right-design {
+        right: -55px;
+
+        bottom: -15px;
+
+        transform: scale(.7);
+
+        opacity: .7;
+    }
+
+
+    .backup-cta-button {
+        min-width: 195px;
+
+        min-height: 54px;
+
+        font-size: 14px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .backup-cta {
+        min-height: 500px;
+    }
+
+    .backup-cta-content h2 {
+        font-size: 29px;
+    }
+
+    .backup-cta-content p {
+        font-size: 13px;
+    }
+
+    .backup-cta-left-design {
+        left: -75px;
+
+        top: 25%;
+
+        transform:
+            translateY(-50%)
+            scale(.52)
+            rotate(-25deg);
+    }
+
+    .backup-cta-right-design {
+        right: -90px;
+
+        bottom: -30px;
+
+        transform: scale(.58);
+    }
+
+}

@@ -1,0 +1,1390 @@
+/* =========================================================
+   STACKLY BACKUP & RECOVERY
+   HEADER / NAVBAR
+   RED - ORANGE THEME
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   COLOR VARIABLES
+========================================================= */
+
+:root {
+    --primary-red: #FF3D00;
+    --primary-red-dark: #E93600;
+    --primary-red-light: #FFF3EF;
+
+    --dark: #0B0F1A;
+    --text-dark: #171717;
+    --text-light: #666666;
+
+    --white: #FFFFFF;
+
+    --border: #eeeeee;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.main-header {
+    width: 100%;
+    position: relative;
+    z-index: 9999;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    width: 100%;
+    height: 82px;
+
+    padding: 0 6%;
+
+    background: var(--white);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 10000;
+
+    border-bottom: 1px solid var(--border);
+
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.navbar-logo {
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    z-index: 10003;
+}
+
+.navbar-logo a {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+}
+
+.stackly-logo {
+    width: 250px;
+    height: auto;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.desktop-navigation {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-menu {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 38px;
+}
+
+.nav-item {
+    list-style: none;
+}
+
+.nav-link {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding: 10px 0;
+
+    text-decoration: none;
+
+    color: var(--text-dark);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =========================================================
+   NAVIGATION UNDERLINE
+========================================================= */
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 2px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--primary-red);
+
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-red);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--primary-red);
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   RIGHT SIDE ACTIONS
+========================================================= */
+
+.navbar-actions {
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+.login-link {
+    position: relative;
+
+    text-decoration: none;
+
+    color: var(--text-dark);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: color 0.3s ease;
+}
+
+.login-link:hover {
+    color: var(--primary-red);
+}
+
+
+/* =========================================================
+   GET STARTED BUTTON
+========================================================= */
+
+.header-cta {
+    min-width: 145px;
+
+    padding: 14px 24px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    background: var(--primary-red);
+
+    color: var(--white);
+
+    border: 2px solid var(--primary-red);
+
+    border-radius: 30px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.header-cta:hover {
+    background: var(--primary-red-dark);
+
+    border-color: var(--primary-red-dark);
+
+    color: var(--white);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(255, 61, 0, 0.22);
+}
+
+
+/* =========================================================
+   MOBILE TOGGLE
+========================================================= */
+
+.mobile-menu-toggle {
+    display: none;
+
+    width: 48px;
+    height: 48px;
+
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: var(--primary-red-light);
+
+    cursor: pointer;
+
+    position: relative;
+
+    z-index: 10004;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    border-radius: 0;
+
+    transition:
+        background 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+    background: #ffe4dc;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+
+    width: 22px;
+    height: 2px;
+
+    background: var(--primary-red);
+
+    border-radius: 5px;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.25s ease,
+        width 0.35s ease;
+}
+
+
+/* =========================================================
+   HAMBURGER TO X
+========================================================= */
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+
+    width: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+.mobile-navigation {
+    display: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 0 4%;
+    }
+
+    .nav-menu {
+        gap: 25px;
+    }
+
+    .stackly-logo {
+        width: 140px;
+    }
+
+    .navbar-actions {
+        gap: 16px;
+    }
+
+    .header-cta {
+        min-width: 130px;
+
+        padding: 13px 18px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* -----------------------------------------
+       FIXED MOBILE HEADER
+    ----------------------------------------- */
+
+    .navbar {
+        height: 72px;
+
+        padding: 0 20px;
+
+        background: var(--white);
+
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        z-index: 10000;
+
+        box-shadow:
+            0 2px 15px rgba(0, 0, 0, 0.08);
+    }
+
+
+    /* -----------------------------------------
+       LOGO
+    ----------------------------------------- */
+
+    .navbar-logo {
+        z-index: 10003;
+    }
+
+    .stackly-logo {
+        width: 195px;
+
+       height: 48px;
+    }
+
+
+    /* -----------------------------------------
+       HIDE DESKTOP MENU
+    ----------------------------------------- */
+
+    .desktop-navigation {
+        display: none;
+    }
+
+
+    /* -----------------------------------------
+       HIDE DESKTOP BUTTONS
+    ----------------------------------------- */
+
+    .navbar-actions {
+        display: none;
+    }
+
+
+    /* -----------------------------------------
+       SHOW MOBILE TOGGLE
+    ----------------------------------------- */
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+
+    /* =================================================
+       MOBILE FULL SCREEN MENU
+    ================================================= */
+
+    .mobile-navigation {
+        display: block;
+
+        position: fixed;
+
+        top: 72px;
+        left: 0;
+
+        width: 100%;
+        height: calc(100vh - 72px);
+
+        background: var(--white);
+
+        z-index: 9998;
+
+        visibility: hidden;
+
+        opacity: 0;
+
+        transform: translateY(-15px);
+
+        pointer-events: none;
+
+        overflow-y: auto;
+
+        transition:
+            opacity 0.35s ease,
+            transform 0.35s ease,
+            visibility 0.35s ease;
+    }
+
+
+    /* -----------------------------------------
+       OPEN MOBILE MENU
+    ----------------------------------------- */
+
+    .mobile-navigation.active {
+        visibility: visible;
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+        pointer-events: auto;
+    }
+
+
+    /* =================================================
+       MOBILE MENU CONTENT
+    ================================================= */
+
+    .mobile-menu-content {
+
+        width: 100%;
+
+        min-height: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        padding: 35px 22px 50px;
+    }
+
+
+    /* =================================================
+       MOBILE LINKS
+    ================================================= */
+
+    .mobile-nav-menu {
+
+        width: 100%;
+
+        max-width: 430px;
+
+        list-style: none;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 5px;
+    }
+
+    .mobile-nav-menu li {
+        width: 100%;
+
+        list-style: none;
+
+        text-align: center;
+    }
+
+
+    .mobile-nav-link {
+
+        width: 100%;
+
+        display: block;
+
+        padding: 15px 12px;
+
+        text-decoration: none;
+
+        color: var(--text-dark);
+
+        font-size: 20px;
+
+        font-weight: 600;
+
+        border-radius: 5px;
+
+        transition:
+            color 0.3s ease,
+            background 0.3s ease,
+            transform 0.3s ease;
+    }
+
+
+    .mobile-nav-link:hover {
+
+        color: var(--primary-red);
+
+        background: var(--primary-red-light);
+
+        transform: translateX(4px);
+    }
+
+
+    .mobile-nav-link.active {
+
+        color: var(--primary-red);
+
+        background: var(--primary-red-light);
+    }
+
+
+    /* =================================================
+       MOBILE ACTIONS
+    ================================================= */
+
+    .mobile-menu-actions {
+
+        width: 100%;
+
+        max-width: 300px;
+
+        margin-top: 25px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 13px;
+    }
+
+
+    .mobile-login,
+    .mobile-cta {
+
+        width: 100%;
+
+        min-height: 50px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-decoration: none;
+
+        border-radius: 5px;
+
+        font-size: 15px;
+
+        font-weight: 700;
+
+        transition:
+            background 0.3s ease,
+            color 0.3s ease,
+            transform 0.3s ease;
+    }
+
+
+    /* Login */
+
+    .mobile-login {
+
+        color: var(--primary-red);
+
+        background: var(--white);
+
+        border: 1.5px solid var(--primary-red);
+    }
+
+    .mobile-login:hover {
+
+        background: var(--primary-red-light);
+
+        transform: translateY(-2px);
+    }
+
+
+    /* CTA */
+
+    .mobile-cta {
+
+        color: var(--white);
+
+        background: var(--primary-red);
+
+        border: 1.5px solid var(--primary-red);
+    }
+
+    .mobile-cta:hover {
+
+        background: var(--primary-red-dark);
+
+        border-color: var(--primary-red-dark);
+
+        transform: translateY(-2px);
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        height: 68px;
+
+        padding: 0 16px;
+    }
+
+    .stackly-logo {
+        width: 175px;
+
+        height:auto;
+        margin-left:-30px;
+    }
+
+    .mobile-menu-toggle {
+        width: 44px;
+        height: 44px;
+    }
+
+    .mobile-navigation {
+        top: 68px;
+
+        height: calc(100vh - 68px);
+    }
+
+    .mobile-nav-link {
+        font-size: 19px;
+
+        padding: 14px 10px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .navbar {
+        padding: 0 12px;
+    }
+
+    .stackly-logo {
+        width: 195px;
+    }
+
+    .mobile-menu-toggle {
+        width: 42px;
+        height: 42px;
+    }
+
+    .mobile-nav-link {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================================
+   RED SELECTION
+========================================================= */
+
+::selection {
+    background: var(--primary-red);
+
+    color: var(--white);
+}
+
+
+
+/* =====================================================
+   STACKLY BACKUP FOOTER
+===================================================== */
+.backup-footer {
+    width: 100%;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    /* Background image */
+    background-image:
+        linear-gradient(
+            rgba(5, 9, 28, 0.92),
+            rgba(5, 9, 28, 0.94)
+        ),
+        url("../images/footer-bg.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #ffffff;
+}
+
+
+
+
+/* =====================================================
+   MAIN FOOTER
+===================================================== */
+
+.backup-footer-container {
+    width: 100%;
+
+    max-width: 1450px;
+
+    margin: 0 auto;
+
+    padding: 80px 45px 65px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.35fr
+        0.75fr
+        0.95fr
+        1.25fr;
+
+    /*
+       Reduced gap
+    */
+    column-gap: 55px;
+
+    align-items: start;
+}
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.backup-footer-brand {
+    max-width: 390px;
+}
+
+.backup-footer-logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    margin-bottom: 8px;
+}
+
+
+.backup-footer-logo img {
+    width: 195px;
+
+    height: auto;
+
+    display: block;
+    margin-top: -30px;
+    margin-left: 40px;
+     filter: none !important;
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+}
+*/
+
+.backup-footer-brand p {
+    margin: 0;
+
+    color: #aeb5c6;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+    margin-top: -40px;
+}
+
+
+/* =====================================================
+   FOOTER HEADINGS
+===================================================== */
+
+.backup-footer-column h3,
+.backup-footer-newsletter h3 {
+    margin: 0 0 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    color: #ffffff;
+
+    font-size: 21px;
+
+    font-weight: 750;
+}
+
+
+.backup-footer-column h3 > span,
+.backup-footer-newsletter h3 > span {
+    width: 5px;
+
+    height: 43px;
+
+    background: #ff3d00;
+
+    display: block;
+
+    border-radius: 4px;
+}
+
+
+/* =====================================================
+   FOOTER LINKS
+===================================================== */
+
+.backup-footer-column ul {
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+.backup-footer-column li {
+    margin-bottom: 18px;
+}
+
+
+.backup-footer-column li:last-child {
+    margin-bottom: 0;
+}
+
+
+.backup-footer-column a {
+    color: #aeb5c6;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    display: inline-block;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.backup-footer-column a:hover {
+    color: #ff3d00;
+
+    transform: translateX(5px);
+}
+
+
+/* =====================================================
+   SOCIAL ICONS
+===================================================== */
+
+.backup-footer-social {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 30px;
+}
+
+
+.backup-footer-social a {
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: rgba(255, 255, 255, 0.035);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        transform 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+.backup-footer-social a:hover {
+    background: #ff3d00;
+
+    border-color: #ff3d00;
+
+    color: #ffffff;
+
+    transform: translateY(-5px);
+}
+
+
+/* =====================================================
+   NEWSLETTER
+===================================================== */
+
+.backup-footer-newsletter {
+    max-width: 440px;
+}
+
+
+.backup-footer-newsletter p {
+    margin: 0 0 25px;
+
+    color: #aeb5c6;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.backup-newsletter-input {
+    width: 100%;
+
+    height: 68px;
+
+    display: flex;
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    background: rgba(255, 255, 255, 0.035);
+}
+
+
+.backup-newsletter-input input {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 100%;
+
+    border: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    padding: 0 22px;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 15px;
+}
+
+
+.backup-newsletter-input input::placeholder {
+    color: #8992a6;
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+.backup-newsletter-input button {
+    width: 76px;
+
+    height: 100%;
+
+    border: 0;
+
+    outline: 0;
+
+    background: #ff3d00;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        background 0.3s ease;
+}
+
+
+.backup-newsletter-input button:hover {
+    background: #e83600;
+}
+
+
+.backup-newsletter-input button
+.material-symbols-outlined {
+    font-size: 28px;
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+.backup-newsletter-input button:hover
+.material-symbols-outlined {
+    transform: translateX(5px);
+}
+
+
+/* =====================================================
+   VALIDATION ERROR
+===================================================== */
+
+.backup-newsletter-error {
+    min-height: 23px;
+
+    padding-top: 8px;
+
+    color: #ff6340;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   BOTTOM
+===================================================== */
+
+.backup-footer-bottom {
+    max-width: 100%;
+
+    margin: 0 15px;
+
+    padding: 25px 90px 28px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    align-items: center;
+}
+
+
+.backup-footer-bottom p {
+    margin: 0;
+
+    color: #7f8ba0;
+
+    font-size: 13px;
+}
+
+
+.backup-footer-crafted {
+    text-align: center;
+}
+
+
+.backup-footer-crafted
+.material-symbols-outlined {
+    color: #ff3d00;
+
+    font-size: 17px;
+
+    vertical-align: middle;
+
+    margin: 0 4px;
+}
+
+
+.backup-footer-legal {
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.backup-footer-legal a {
+    color: #7f8ba0;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: color 0.3s ease;
+}
+
+
+.backup-footer-legal a:hover {
+    color: #ff3d00;
+}
+
+
+.backup-footer-legal span {
+    color: #4c5668;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .backup-footer-container {
+        grid-template-columns:
+            1.2fr
+            0.8fr;
+
+        gap: 50px 60px;
+
+        padding: 70px 40px 55px;
+    }
+
+
+    .backup-footer-brand,
+    .backup-footer-newsletter {
+        max-width: 100%;
+    }
+
+
+    .backup-footer-bottom {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .backup-footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 42px;
+
+        padding: 60px 25px 50px;
+    }
+
+
+    .backup-footer-brand {
+        max-width: 100%;
+    }
+
+
+    .backup-footer-logo {
+        margin-bottom: 20px;
+    }
+
+
+    .backup-footer-logo img {
+        width: 160px;
+    }
+
+
+    .backup-footer-brand p {
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+
+    .backup-footer-social {
+        margin-top: 23px;
+    }
+
+
+    .backup-footer-column h3,
+    .backup-footer-newsletter h3 {
+        margin-bottom: 22px;
+
+        font-size: 19px;
+    }
+
+
+    .backup-footer-column li {
+        margin-bottom: 14px;
+    }
+
+
+    .backup-footer-newsletter p {
+        font-size: 14px;
+    }
+
+
+    .backup-newsletter-input {
+        height: 60px;
+    }
+
+
+    .backup-newsletter-input button {
+        width: 65px;
+    }
+
+
+    .backup-footer-bottom {
+        margin: 0;
+
+        padding: 25px;
+
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+
+        text-align: center;
+    }
+
+
+    .backup-footer-crafted {
+        text-align: center;
+    }
+
+
+    .backup-footer-legal {
+        justify-content: center;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .backup-footer-container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    .backup-footer-social a {
+        width: 47px;
+
+        height: 47px;
+    }
+
+
+    .backup-newsletter-input input {
+        padding: 0 15px;
+
+        font-size: 14px;
+    }
+
+
+    .backup-newsletter-input button {
+        width: 58px;
+    }
+
+}
